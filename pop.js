@@ -1,5 +1,5 @@
 
-	var sifrem=document.getElementById("Psw");
+		var sifrem=document.getElementById("Psw");
 		var sifremOnay=document.getElementById("Pswcon");
 		var birsayi=document.getElementById("madde1");
 		var buyukharf=document.getElementById("madde2");

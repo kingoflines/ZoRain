@@ -646,7 +646,14 @@
     cursor: pointer;
   }
 
-
+  .icons{
+    visibility: visible;
+    width:20px;
+    height:20px; 
+    margin-left: -25px;
+    margin-top: -2px;
+    position: absolute;
+  }
   .picture_radio:checked ~ .checkmark
   {
     background-color: rgba(255,255,255,0.5);
@@ -690,9 +697,11 @@
     background-color: rgba(0,0,0,0.5);
     transform: translate(-50%,-50%);
   }
+  /* Anasayfada Bulunan 5 Öneri Paylaşımı Başlangıcı*/
   .contentbar{
     height: auto;
   }
+  /*Tek Sayılardaki Paylaşımın Başlangıcı*/
   .leftcircle1{
     width: 150px;
     height: 150px;
@@ -707,6 +716,7 @@
     background-color:grey;
     margin-left:75px;
   }
+  
   .header1{
     margin-left: 90px;
   }
@@ -753,6 +763,7 @@
     font-family: Arial, Helvetica, sans-serif;
     color:pink;
   }
+  /*Tek Sayılardaki Paylaşımın Bitişi*/
   /*İkinci Paylaşım Başlangıcı*/
   .leftcircle2{
     float: right;
@@ -816,5 +827,157 @@
     font-family: Arial, Helvetica, sans-serif;
     color:pink;
   }
-  /*İkinci Paylaşım Bitişi*/
+  /*Çift Sayılardaki Paylaşım Bitişi*/
+  /*Anasayfada Bulunan 5 Öneri Paylaşımının Bitişi*/
 }
+/*1920 Pixel Aşağısı İçin Responsive Başlangıcı*/
+@media screen and (max-width: 1910px) {  
+  /*Anasayfada Bulunan 5 Öneri Paylaşımının Başlangıcı*/
+  /*Tek Sayılardaki Paylaşımın Başlangıcı*/
+  .contentblock1{
+    width: 90%;
+    font-size: 18.4px;
+  }  
+  .content1{
+    margin-left:90px;
+    margin-top: -25px;
+    width: 85%;
+  }
+  .username1{
+    font-size: 12px;
+    margin-left: 115px;
+    margin-top:15px;
+    }
+  .hitpoint{
+    font-size: 12px;
+    margin-top:-26px;
+    margin-left: 235px;
+  }
+  .likepoint{
+    font-size: 12px;
+    margin-left:405px;
+    margin-top: -27.5px;
+  }
+  .time{
+    font-size: 12px;
+    margin-left: 505px;
+    margin-top: -28px;
+  }
+  .favorite{    
+    font-size: 12px;
+    margin-left: 625px;
+    margin-top: -28px;
+  }
+  /*Tek Sayılardaki Paylaşımın Bitişi*/
+  /*Çift Sayılardaki Paylaşım Başlangıcı*/
+  .leftcircle2{
+    float: right;
+    margin-right: 23px;
+  }
+  .contentblock2{
+    font-size: 18.4px;
+    width: 90%;
+  }
+  .content2{
+    margin-left: 15px;
+    width: 88%;
+    margin-top: -25px;
+  }
+  .username2{
+    font-size: 12px;
+    margin-left: 625px;
+    margin-top: 15px;
+    }
+  .hitpoint2{
+    font-size: 12px;
+    margin-left: 450px;
+    margin-top: -26px;
+  }
+  .likepoint2{
+    font-size: 12px;
+    margin-left: 345px;
+    margin-top: -26px;
+  }
+  .time2{
+    font-size: 12px;
+    margin-left: 205px;
+    margin-top: -26px;
+  }
+  .favorite2{    
+    font-size: 12px;
+    margin-left: 40px;
+    margin-top: -26px;
+  }
+  /*Çift Sayılardaki Paylaşım Bitişi*/
+  /*Anasafyada Bulunan 5 Öneri Paylaşımının Bitişi*/
+}
+/*1920 Pixel Aşağısı İçin Responsive Bitişi*/
+/*1366 Pixel Aşağısı İçin Responsive Başlangıcı*/
+@media screen and (max-width: 1360px) { 
+  .trends_block{
+    width: 25%;
+  }
+  .slider{
+    width: 72%;
+  }
+  .content1{width: 83%;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; 
+    overflow:hidden;
+  }
+  .content2{
+    width: 83%;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; 
+    overflow:hidden;
+  }
+  .header1{    
+    width: 80%;
+    display: -webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical; 
+    overflow:hidden;
+  }
+  .header2{
+    width: 80%;
+    display: -webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical; 
+    overflow:hidden;
+  }
+  .username1{    visibility: hidden;
+  margin-left: 115px;  }
+  .hitpoint{visibility: hidden;
+    margin-left: 150px;}
+  .likepoint{visibility: hidden;
+  margin-left:185px;}
+  .time{visibility: hidden;
+    margin-left:215px;}
+  .favorite{visibility: hidden;
+    margin-left:245px;}
+  .username2{    visibility: hidden;
+    margin-left:175px;  }
+  .hitpoint2{visibility: hidden;
+    margin-left:140px;}
+  .likepoint2{visibility: hidden;
+    margin-left:105px;}
+  .time2{visibility: hidden;
+    margin-left:70px;}
+  .favorite2{visibility: hidden;} 
+  .leftcircle2{
+    position: absolute;
+    float:right;
+    margin-left:82%;
+  }
+  .username1:hover{
+    
+  }
+  .icons{
+    visibility: visible;
+    width:20px;height:20px; margin-left: -25px;margin-top: -2px;position: absolute;
+  }
+  
+}
+/*1366 Pixel Aşağısı İçin Responsive Bitişi*/
