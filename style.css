@@ -603,7 +603,7 @@
     left: 0;
     margin: 10px;
     width: calc(100% - 450px);
-    height: 600px;
+    height: auto;
     border-radius: 10px;
     overflow: hidden;
   }
@@ -690,4 +690,131 @@
     background-color: rgba(0,0,0,0.5);
     transform: translate(-50%,-50%);
   }
+  .contentbar{
+    height: auto;
+  }
+  .leftcircle1{
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border-radius: 90px;    
+    position: static;
+    margin-top: -150px;   
+  }
+  .contentblock1{
+    width: 90%;
+    height: 150px;
+    background-color:grey;
+    margin-left:75px;
+  }
+  .header1{
+    margin-left: 90px;
+  }
+  .content1{
+    margin-left:90px;
+    margin-top: -25px;
+  }
+  .username1{
+    font-size: 15px;
+    margin-left: 115px;
+    margin-top: -17px;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .hitpoint{
+    font-size: 15px;
+    position: absolute;
+    margin-left: 375px;
+    margin-top: -32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:blue;
+  }
+  .likepoint{
+    font-size: 15px;
+    position: absolute;
+    margin-left: 725px;
+    margin-top: -32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:green;
+  }
+  .time{
+    font-size: 15px;
+    position: absolute;
+    margin-left: 925px;
+    margin-top: -32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:yellow;
+  }
+  .favorite{    
+    font-size: 15px;
+    position: absolute;
+    margin-left: 1125px;
+    margin-top: -32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:pink;
+  }
+  /*İkinci Paylaşım Başlangıcı*/
+  .leftcircle2{
+    float: right;
+    margin-right: 75px;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border-radius: 90px;    
+    position: static;
+    margin-top: -150px;   
+  }
+  .contentblock2{
+    width: 90%;
+    height: 150px;
+    background-color:grey;
+  }
+  .header2{
+    margin-left: 15px;
+  }
+  .content2{
+    margin-left: 15px;
+    width: 92%;
+    margin-top: -25px;
+  }
+  .username2{
+    font-size: 15px;
+    margin-left: 1125px;
+    margin-top: -17px;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .hitpoint2{
+    font-size: 15px;
+    position: absolute;
+    margin-left: 875px;
+    margin-top: -32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:blue;
+  }
+  .likepoint2{
+    font-size: 15px;
+    position: absolute;
+    margin-left: 725px;
+    margin-top: -32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:green;
+  }
+  .time2{
+    font-size: 15px;
+    position: absolute;
+    margin-left: 375px;
+    margin-top: -32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:yellow;
+  }
+  .favorite2{    
+    font-size: 15px;
+    position: absolute;
+    margin-left: 115px;
+    margin-top: -32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:pink;
+  }
+  /*İkinci Paylaşım Bitişi*/
 }
