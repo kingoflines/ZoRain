@@ -1,0 +1,24 @@
+@font-face {font-family: "Fasse Sans";
+    src: url("data/fonts/FasseSans.ttf");
+}
+
+@font-face {font-family: "Quaver Sans";
+    src: url("data/fonts/QuaverSans.ttf");
+}
+
+@font-face {font-family: "Skola Sans";
+    src: url("data/fonts/SkolaSans.ttf");
+}
+
+@font-face {font-family: "Gill Sans";
+    src: url("data/fonts/GillSans.ttf");
+}
+@font-face {
+font-family: "Cooper Hewitt Light";
+src: url("data/fonts/CooperHewitt-Light.otf");
+}
+
+@font-face {
+font-family: "Varela Regular";
+src: url("data/fonts/Varela-Regular.otf");
+}
