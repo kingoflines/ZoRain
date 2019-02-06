@@ -15,12 +15,9 @@
   <script type="text/javascript" src="jquery-3.3.1.min.js">
   </script>
   <script src="JSPOPUP.js"></script>
-  <script src="/responsiveivons.js"></script>
   <link rel="stylesheet" type="text/css" href="fonts.css">
 </head>
-
 <body onresize="scrollFunction('mid_block')" onload="fade()">
-
 <div class="yukleme_bolgesi" id="yukleme_bolgesi" style="visibility: visible;">
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -32,7 +29,6 @@
 	c0,0,30.208,2.156,48.208-22.219h32.625c0,0-17.75,49.25-76,50.75H36.327l79.208-140.5L26.015,31.899z"/>
 <polygon class="p2" fill="none" stroke="#fff" stroke-miterlimit="10" points="57.702,45.524 108.202,62.44 35.869,195.357 97.411,62.295 
 	"/>
-
 <polygon class="p4" fill="none" stroke="#fff" stroke-miterlimit="10" points="64.536,58.045 84.348,64.607 55.411,118.357 79.848,64.795 
 	"/>
 <path class="p5" fill="none" stroke="#fff" stroke-miterlimit="10" d="M188.161,163.67h-41.75c0,0-34.875-47.313,0-97.813
@@ -41,101 +37,89 @@
 </svg>
 </div>
 </div>
-
-<div class="top_menu" id="top_menu">
-    
+<div class="top_menu" id="top_menu">  
     
      <span class="logo"><a href="index.html"><img id="zologo" src="data/images/beyazlogo.png"></a></span>
-
-     <div id="desktop_menu">
-     
+     <div id="desktop_menu">     
      <span class="menu_item">Anasayfa <i class="fas fa-home"></i></span>
      <span class="menu_item">Yazılım <i class="fas fa-keyboard"></i></span>  
      <span class="menu_item">Tasarım <i class="fas fa-paint-brush"></i></span>
      <span class="menu_item">Hakkımızda <i class="fas fa-info"></i></span>
      <span class="menu_item">İletişim <i class="fas fa-envelope"></i></span>
-
      </div>
-
-
      <label class="mobile_search">
       <input type="checkbox" name="mobile_search_popup_checkbox" id="cb2" onclick="openSearch()">
      <span><i class="fas fa-search"></i></span>
    </label>
-
       <label class="menulabel">
       <span class="menu">MENU
         <input type="checkbox" class="menubox" id="ch1" onclick="openmenu()">
        </input> 
-        <i class="fas fa-bars"></i>
-      
+        <i class="fas fa-bars"></i>      
      </span>
      </label>
-
       <div class="top_search">
        <div class="search_label">
        <input type="text" name="search" class="search_box">
        <button class="search_button hoverlay">Ara</button>
        </div>
      </div>
-
 </div>
-
-
 <div class="mobile_search_popup">
   <span id="triangle"> </span>
-        <div id="block">
-          
+        <div id="block">          
           <dir class="block_search" id="block_search">
             <input type="text" name="search" class="block_search_box">
             <button class="mobile_search_button hoverlay">Ara</button>
           </dir>
-
-
         </div>
-
-</div>
-  
+</div>  
     <div class="sign_in_up" id="sign_in_up">
-      <div class="container
-      ">
-
+      <div class="container">
         <a href="#focus"><button onclick="tab_signin()" class="hoverlay" id="sign_inb">Giriş Yap</button></a>
-
             <a href="#focus"><button class="sign_upb hoverlay" onclick="tab_signup()">Kayıt Ol</button></a>
           </div>
     </div>
-
     <div id="focus">
-
   <div class="sign_popup" id="popup_window">
     <span class="top_popup_bar">
     <img id="popup_logo" src="data/images/beyazlogo.png">
     <span id="current_tab"></span>
-
     <a id="popup_exit" href="#"><button id="popup_exit_button" onclick="cleardivs()" class="hoverlay">x</button></a>
     </span>
-
     <div class="tabs">
       <span class="tabs-container">
-
       <label for="tab1radio" class="tab" id="tab1"><p>Kayıt Ol</p>
-      <input onchange="tabcheck()" type="radio" name="tab" id="tab1radio"></label>
-      
+      <input onchange="tabcheck()" type="radio" name="tab" id="tab1radio"></label>      
       <label for="tab2radio" class="tab" id="tab2"><p>E-posta Onay</p>
       <input onchange="tabcheck()" type="radio" name="tab" id="tab2radio"></label>
-
       <label for="tab3radio" class="tab" id="tab3"><p>Giriş Yap</p>
       <input onchange="tabcheck()" type="radio" name="tab" id="tab3radio"></label>
-
-
       </span>
     </div>
 
     <div class="tab_contents">
 
       <div id="tab1_content" style="visibility: hidden;"> 
-
+          <form action="" mothod="POST" class="register_form">
+            <label for="" class="register_label">Adınız Soyadınız*</label><br>
+            <input type="text" name="username" id="username" class="register_input"><br><br>
+            <label for="" class="register_label">Kullanıcı Adınız*</label><br>
+            <input type="text" name="usernick" id="usernick" class="register_input"><br><br>
+            <label for="" class="register_label">Şifreniz*</label><br>
+            <input type="password" name="userpass" id="userpass" class="register_input"><br>        <br>  
+            <label for="" class="passinformation">En Az 6 Karakter İçermelidir</label><br>
+            <label for="" class="passinformation">En Az 1 Büyük Karakter İçermelidir</label><br>
+            <label for="" class="passinformation">En Az 1 Küçük Karakter İçermelidir</label><br>
+            <label for="" class="passinformation">En Az 1 Sayı İçermelidir</label><br>
+            <label for="" class="register_label" id="responsivelabel">Tekrar Şifreniz*</label><br>
+            <input type="password" name="userpassagain" id="userpassagain" class="register_input"><br><br>
+            <label for="" class="register_label">E-Posta Adresiniz</label><br>
+            <input type="email" name="useremail" id="useremail" class="register_input"><br><br>
+            <label for="" class="passinformation">E-Posta Doğrulaması Gerekmektedir. Lütfen Doğru Girin</label><br>
+            <input type="checkbox" name="" id="contract" class="contractbox"><b class="contract">Kullanıcı <a href="#">Sözleşmesini</a> Okudum Ve Kabul Ediyorum</b><br><br>
+            <input type="submit" value="Kayıt Ol" class="registerbtn">
+          </form>
       </div>
 
       <div id="tab2_content" style="visibility: hidden">
@@ -145,15 +129,9 @@
       <div id="tab3_content" style="visibility: hidden;">
 
       </div>
-
     </div>
-
-
-  </div>
-  
-</div>
-    
-  
+  </div>  
+</div> 
   <div class="open_menu" id="omenu1">
     <button class="header" onclick="closemenu()">MENU</button>
     <span class="container">
@@ -170,13 +148,11 @@
       <button class="mobile_sign_up hoverlay">Kayıt ol</button>
     </div>
   </div>
-  
-  
   <div class="mid_block" id="mid_block" onscroll="scrollFunction('mid_block')">
     <div class="slider" id="slider">
       <div class="contentbar">
       <div class="contentblock1">
-          <h3 class="header1">Zo-Rain Web Sitesi Açıldı</h3>
+        <a href="#"><h3 class="header1">Zo-Rain Web Sitesi Açıldı</h3></a>
           <p class="content1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae accusantium ad velit necessitatibus numquam eum ea nulla maiores ducimus voluptate veniam fugiat asperiores quaerat, cum officiis suscipit perspiciatis officia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur totam perferendis, aliquid a mollitia sapiente earum quidem eum saepe esse, quae ipsam consequatur molestiae laborum minus nobis assumenda. Totam, iusto!  </p>
           <div class="sharebar">
           <p class="username1"><span class="icons"> <img src="data/images/user.png"></span> KingOfLines</p>
@@ -186,20 +162,19 @@
           <p class="favorite"><span class="icons"><img src="data/images/add.png"></span> Favorilerime Ekle</p>
         </div>
         </div>
-      <div class="leftcircle1"><img src="data/images/bayrak.png"  alt=""></div>
+      <div class="leftcircle1"><img src="data/images/php.png"  alt=""></div>
       <div class="contentblock2">
-          <h3 class="header2">Buraya Dinamik Başlık 2 Gelecek</h3>
+          <a href="#"><h3 class="header2">Buraya Dinamik Başlık 2 Gelecek</h3></a> 
           <p class="content2">Nam ratione obcaecati deserunt distinctio molestias necessitatibus, nulla rerum odit officiis nihil exercitationem veniam reprehenderit assumenda eaque at aspernatur fugiat? Pariatur, magnam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusantium incidunt eligendi explicabo itaque accusamus consectetur vitae, iure aperiam nesciunt sint obcaecati aut natus magnam. Rem assumenda eos vero ali</p>  
               <p class="username2" id="username2"><span class="icons"><img src="data/images/user.png"></span> KingOfLines</p>
-              <p class="hitpoint2" id="hitpoint2"><span class="icons"><img src="data/images/view.png"></span> 127 Kez Görüntülendi</p>
-              <p class="likepoint2" id="likepoint2"><span class="icons"><img src="data/images/like.png"></span> 27 Beğeni</p>
+              <p class="hitpoint2" id="hitpoint2"><span class="icons"><img src="data/images/view.png"></span> 127 M Kez Görüntülendi</p>
+              <p class="likepoint2" id="likepoint2"> <span class="icons"><img src="data/images/like.png"></span> 270 B Beğeni</p>
               <p class="time2" id="time2"><span class="icons"><img src="data/images/clock.png"></span> 05.02.2019</p>
-              <p class="favorite2" id="favorite2"><span class="icons"><img src="data/images/add.png"></span> Favorilerime Ekle</p>
-            
+              <p class="favorite2" id="favorite2"><span class="icons"><img src="data/images/add.png"></span> Favorilerime Ekle</p>            
         </div>
-      <div class="leftcircle2"><img src="data/images/bayrak.png"  alt=""></div>
+      <div class="leftcircle2"><img src="data/images/indir (1).jfif"></div>
       <div class="contentblock1">
-          <h3 class="header1">Buraya Dinamik Başlık 3 Gelecek Örnek Olması İçin Uzun Yazıyorum</h3>
+          <a href="#"><h3 class="header1">Buraya Dinamik Başlık 3 Gelecek Örnek Olması İçin Uzun Yazıyorum</h3></a>
           <p class="content1">Nam ratione obcaecati deserunt distinctio molestias necessitatibus, nulla rerum odit officiis nihil exercitationem veniam reprehenderit assumenda eaque at aspernatur fugiat? Pariatur, magnam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusantium incidunt eligendi explicabo itaque accusamus consectetur vitae, iure aperiam nesciunt sint obcaecati aut natus magnam. Rem assumenda eos vero ali</p>
           <p class="username1"><span class="icons"><img src="data/images/user.png"></span> KingOfLines</p>
           <p class="hitpoint"><span class="icons"><img src="data/images/view.png"></span> 127 Kez Görüntülendi</p>
@@ -207,9 +182,9 @@
           <p class="time"><span class="icons"><img src="data/images/clock.png"></span> 05.02.2019</p>
           <p class="favorite"><span class="icons"><img src="data/images/add.png"></span> Favorilerime Ekle</p>
         </div>
-      <div class="leftcircle1"><img src="data/images/bayrak.png"  alt=""></div>
+      <div class="leftcircle1"><img src="data/images/indir (2).jfif"  alt=""></div>
       <div class="contentblock2">
-          <h3 class="header2">Buraya Dinamik Başlık 4 Gelecek Örnek Olması İçin Çok Daha Uzun Bir Başlık Yazıyorum</h3>
+          <a href="#"><h3 class="header2">Buraya Dinamik Başlık 4 Gelecek Örnek Olması İçin Çok Daha Uzun Bir Başlık Yazıyorum</h3></a> 
           <p class="content2">Nam ratione obcaecati deserunt distinctio molestias necessitatibus, nulla rerum odit officiis nihil exercitationem veniam reprehenderit assumenda eaque at aspernatur fugiat? Pariatur, magnam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusantium incidunt eligendi explicabo itaque accusamus consectetur vitae, iure aperiam nesciunt sint obcaecati aut natus magnam. Rem assumenda eos vero ali</p>
           <p class="username2"><span class="icons"><img src="data/images/user.png"></span> KingOfLines</p>
           <p class="hitpoint2"><span class="icons"><img src="data/images/view.png"></span> 127 Kez Görüntülendi</p>
@@ -217,9 +192,9 @@
           <p class="time2"><span class="icons"><img src="data/images/clock.png"></span> 05.02.2019</p>
           <p class="favorite2"><span class="icons"><img src="data/images/add.png"></span> Favorilerime Ekle</p>
         </div>
-      <div class="leftcircle2"><img src="data/images/bayrak.png"  alt=""></div>
+      <div class="leftcircle2"><img src="data/images/cplus.png"  alt=""></div>
       <div class="contentblock1">
-          <h3 class="header1">1980*1060 Kullanılan Ekranlarda Uzunluk Çok Sorun Çıkarmıyor Daha Küçük Ekranlarda Başlık</h3>
+        <a href="#"><h3 class="header1">1980*1060 Kullanılan Ekranlarda Uzunluk Çok Sorun Çıkarmıyor Daha Küçük Ekranlarda Başlık</h3></a>
           <p class="content1">Nam ratione obcaecati deserunt distinctio molestias necessitatibus, nulla rerum odit officiis nihil exercitationem veniam reprehenderit assumenda eaque at aspernatur fugiat? Pariatur, magnam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla accusantium incidunt eligendi explicabo itaque accusamus consectetur vitae, iure aperiam nesciunt sint obcaecati aut natus magnam. Rem assumenda eos vero ali</p>
           <p class="username1"><span class="icons"><img src="data/images/user.png"></span> KingOfLines</p>
           <p class="hitpoint"><span class="icons"><img src="data/images/view.png"></span> 127 Kez Görüntülendi</p>
@@ -227,7 +202,7 @@
           <p class="time"><span class="icons"><img src="data/images/clock.png"></span> 05.02.2019</p>
           <p class="favorite"><span class="icons"><img src="data/images/add.png"></span> Favorilerime Ekle</p>
         </div>
-      <div class="leftcircle1"><img src="data/images/bayrak.png"  alt=""></div>
+      <div class="leftcircle1"><img src="data/images/indir.jfif" alt=""></div>
     </div>
     </div>
   	<div class="trends_block" id="trends_block">
@@ -246,7 +221,6 @@
 	  </div>
       </span>
       </div>
-
       <span class="trend_header">En Çok Okunan Tasarım Makaleleri</span>
       <div class="category_container">
       <span class="trend_category">
@@ -262,9 +236,7 @@
 	  </div>
       </span>
       </div>
-
-      <span class="trend_header">En Çok Okunan Yazılım Makaleleri</span>
-      
+      <span class="trend_header">En Çok Okunan Yazılım Makaleleri</span>      
       <div class="category_container">
       <span class="trend_category">
 	  <span class="title">Dinamik Başlık</span>
@@ -280,12 +252,9 @@
       </span>
       </div>
   	</div>
-
   	<div class="copyright_block">
      <p><br>2019 ©</p>
     </div>
-
-  </div>
-  
+  </div>  
 </body>
 </html>
