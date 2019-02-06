@@ -792,7 +792,7 @@
         width: 70%;
         height: 40px;
         margin-top:60px;
-        font-size:20px;
+        font-size:19px;
         font-family:"Varela Regular";
         border-radius: 7px;
         box-shadow: 4px 4px 4px 4px #000;
@@ -813,7 +813,6 @@
         height: 40px;        
         text-align: center;
         background-color: #FFF8DC;
-        margin-top:25px;
         color:black;
         border-radius: 5px;
         border:0px;
@@ -823,8 +822,25 @@
         margin-top: 25px;   
         color:whitesmoke;
       }
-      .sign_in_form{
+      .sign_form{
+        width: 100%;
+        position: absolute;
+        margin-top:25px;
         text-align: center;
+      }
+      .forgotpass{
+        margin-left:30%;
+        text-decoration: none;
+        color:red;
+      }
+      .signbtn{        
+        font-size:24px;
+        font-family: "Varela Regular";
+        width: 70%;
+        height: 40px;
+        background-color: lightcyan;
+        border: 0px;
+        box-shadow: 3px 3px 4px 4px #000;
       }
     /*Kayıt Ol Popup---Giriş Yap Sekmesi*/
   /*Masaüstü görünümü için Menu bar */
