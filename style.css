@@ -337,7 +337,7 @@
     display: none;
   }
 
-  .desktop_menu
+  #desktop_menu
   {
     display: none;
   }
@@ -711,7 +711,7 @@
     transform: translateY(-50%);
     width: calc(100% - 450px);
     font-size: 28px;
-    transition: 0.5s;
+        transition: 0.5s;
   }
 
   .menu_item
