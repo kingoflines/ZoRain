@@ -6,7 +6,6 @@
 		var kucukharf=document.getElementById("madde3");
 		var uzunluk=document.getElementById("madde4");
 		
-		
 		sifrem.onfocus =function sartlar(){
 		document.getElementById("Sartlar").style.visibility="visible";
 		document.getElementById("Fieldset").style.height="467px";
@@ -21,6 +20,7 @@
 		document.getElementById("kayitol").style.top="302px";
 		
 		}
+		
 		function mouseon(){
 		document.getElementById("kayitol").style.backgroundColor="red";
 		}
