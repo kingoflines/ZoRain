@@ -22,3 +22,8 @@ src: url("data/fonts/CooperHewitt-Light.otf");
 font-family: "Varela Regular";
 src: url("data/fonts/Varela-Regular.otf");
 }
+
+@font-face {
+font-family: "Bellota Regular";
+src: url("data/fonts/Bellota-Regular.otf");
+}
