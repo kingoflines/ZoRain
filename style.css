@@ -890,12 +890,164 @@
   .action img:hover + .action_name
   {
     display: inline;
+  } /*Kayıt Ol Popup---Kayıt Sekmesi*/
+  .register_input{
+    width: 70%;
+    height: 40px;        
+    text-align: center;
+    background-color: #FFF8DC;
+    color:black;
+    border-radius: 5px;
+    border:0px;
+    box-shadow:3px 3px 3px 4px #000;
   }
-  /* Anasayfada Bulunan 5 Öneri Paylaşımı Başlangıcı*/
-
-
-
-
+  .register_label{
+    float: left;
+    margin-left:15%;
+    color:whitesmoke;
+  }
+  .register_form{
+    margin-top:25px;
+    text-align: center;
+  }
+  .contractbox{
+    float:left;
+    margin-left:15%;
+  }
+  .contract{
+    float: left;
+    color:whitesmoke;
+  }
+  .contract a{
+    text-decoration: none;
+    color:gray;
+  }
+  .passinformation{
+    float: left;
+    margin-top:-5px;
+    margin-left: 15%;
+    color: red;
+    font-size:13px;
+  }
+  .registerbtn{
+    font-size:24px;
+    font-family: "Varela Regular";
+    width: 70%;
+    height: 40px;
+    background-color: lightcyan;
+    border: 0px;
+    box-shadow: 3px 3px 4px 4px #000;
+  }
+/*Kayıt Ol Popup---Kayıt Sekmesi*//*Kayıt Ol Popup---E-Posta Onayla Sekmesi*/
+  .epostaonaybtn{
+    width: 70%;
+    height: 40px;
+    margin-top:60px;
+    font-size:19px;
+    font-family:"Varela Regular";
+    border-radius: 7px;
+    box-shadow: 4px 4px 4px 4px #000;
+  }
+  .epostainformation{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 17px;
+    font-family: "Varela Regular";
+  }
+  #tab2_content{
+    text-align: center;
+  }
+/*Kayıt Ol Popup---E-Posta Onayla Sekmesi*/
+/*Kayıt Ol Popup---Giriş Yap Sekmesi*/
+  .sign_input{        
+    width: 70%;
+    height: 40px;        
+    text-align: center;
+    background-color: #FFF8DC;
+    color:black;
+    border-radius: 5px;
+    border:0px;
+    box-shadow:3px 3px 3px 4px #000;
+  }
+  .sign_label{  
+    margin-top: 25px;   
+    color:whitesmoke;
+  }
+  .sign_form{
+    width: 100%;
+    position: absolute;
+    margin-top:25px;
+    text-align: center;
+  }
+  .forgotpass{
+    margin-left:30%;
+    text-decoration: none;
+    color:red;
+  }
+  .signbtn{        
+    font-size:24px;
+    font-family: "Varela Regular";
+    width: 70%;
+    height: 40px;
+    background-color: lightcyan;
+    border: 0px;
+    box-shadow: 3px 3px 4px 4px #000;
+  }
+/*Kayıt Ol Popup---Giriş Yap Sekmesi*/
+/*Kayıt Ol Popup---Kayıt Sekmesi Responsive*/    
+@media screen and (max-height: 765px) {
+  .register_input{
+    height: 25px;  
+  }
+  .register_label{
+    float: left;
+    margin-left:15%;
+    font-size: 12px;
+    color:whitesmoke;
+  }
+  .register_form{
+    margin-top:15px;
+  }
+  .contract{
+    font-size: 12px;
+  }
+  .registerbtn{
+    font-size:14px;
+    font-family: "Varela Regular";
+    width: 70%;
+    height: 25px;
+    background-color: lightcyan;
+    border: 0px;
+    box-shadow: 3px 3px 4px 4px #000;
+  }      
+  .passinformation{
+    font-size:11px;
+  }
+  .epostaonaybtn{
+    font-size:14px;
+    height: 25px;
+  }
+  .epostainformation{
+    font-size:12px;
+  }
+  .sign_input{
+    height: 25px;
+  }
+  .sign_label{
+    font-size:12px;
+  }
+  .signbtn{
+    height: 25px;
+    font-size:14px;
+  }
+  .rememberme{
+    font-size:12px;
+  }
+  .forgotpass{
+    font-size: 12px;
+  }
+}
+/*Kayıt Ol Popup---Kayıt Sekmesi Responsive*/
 /* 900px-1600px arası ekranlar için CSS bitişi. */
 }
 
