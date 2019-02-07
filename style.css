@@ -548,21 +548,10 @@
     overflow-y: hidden;
   }
 
-  .trends_block iframe
-  {
-    border: none;
-    outline: none;
-  }
-
-  .trends_block::-webkit-scrollbar
-  {
-    visibility: hidden;
-  }
-
   .copyright_block
   {
     position: relative;
-    bottom: -120vh;
+    bottom: calc(-100% - 1000px);
     left: 0;
     background-color: #000;
     color: #fff;
