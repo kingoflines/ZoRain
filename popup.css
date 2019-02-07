@@ -38,39 +38,12 @@
 {
 	position: fixed;
 	left: 50%;
-	margin-top:5%;
 	transform: translateX(-50%);
 	background-color: #fff;
 	width: 600px;
-	height: 760px;
+	height: 100%;
+
 }
-@media screen and (max-height: 765px) {
-
-	.sign_popup
-	{
-		position: fixed;
-		left: 50%;
-		margin-top:2%;
-		transform: translateX(-50%);
-		background-color: #fff;
-		width: 600px;
-		height: 620px;
-	}
-
-}  
-@media screen and (max-height: 500px) {
-	.sign_popup
-	{
-		position: fixed;
-		left: 50%;
-		margin-top:2%;
-		transform: translateX(-50%);
-		background-color: #fff;
-		width: 600px;
-		height: 80%;
-	}
-
-}  
 
 #popup_exit
 {

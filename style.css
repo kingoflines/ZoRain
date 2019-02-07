@@ -701,92 +701,7 @@
     background-color: rgba(0,0,0,0.5);
     transform: translate(-50%,-50%);
   }
-    /*Kayıt Ol Popup---Kayıt Sekmesi*/
-      .register_input{
-        width: 70%;
-        height: 40px;        
-        text-align: center;
-        background-color: #FFF8DC;
-        color:black;
-        border-radius: 5px;
-        border:0px;
-        box-shadow:3px 3px 3px 4px #000;
-      }
-      .register_label{
-        float: left;
-        margin-left:15%;
-        color:whitesmoke;
-      }
-      .register_form{
-        margin-top:25px;
-        text-align: center;
-      }
-      .contractbox{
-        float:left;
-        margin-left:15%;
-      }
-      .contract{
-        float: left;
-        color:whitesmoke;
-      }
-      .contract a{
-        text-decoration: none;
-        color:gray;
-      }
-      .passinformation{
-        float: left;
-        margin-top:-5px;
-        margin-left: 15%;
-        color: red;
-        font-size:13px;
-      }
-      .registerbtn{
-        font-size:24px;
-        font-family: "Varela Regular";
-        width: 70%;
-        height: 40px;
-        background-color: lightcyan;
-        border: 0px;
-        box-shadow: 3px 3px 4px 4px #000;
-      }
-    /*Kayıt Ol Popup---Kayıt Sekmesi*/
-    /*Kayıt Ol Popup Responsive*/
-    @media screen and (max-height: 765px) {
-      .register_input{
-        width: 70%;
-        height: 25px;        
-        text-align: center;
-        background-color: #FFF8DC;
-        color:black;
-        border-radius: 5px;
-        position: relative;
-        margin-top: -500px;
-        border:0px;
-        box-shadow:3px 3px 3px 4px #000;
-      }
-      .register_label{
-        float: left;
-        margin-left:15%;
-        font-size: 12px;
-        color:whitesmoke;
-      }
-      .register_form{
-        margin-top:15px;
-      }
-      .registerbtn{
-        font-size:14px;
-        font-family: "Varela Regular";
-        width: 70%;
-        height: 25px;
-        background-color: lightcyan;
-        border: 0px;
-        box-shadow: 3px 3px 4px 4px #000;
-      }      
-      .passinformation{
-        font-size:11px;
-      }
-    }  
-    /*Kayıt Ol Popup Responsive*/
+
   /*Masaüstü görünümü için Menu bar */
   #desktop_menu
   {
@@ -798,6 +713,7 @@
     font-size: 28px;
         transition: 0.5s;
   }
+
   .menu_item
   {
     color: #fff;
@@ -806,6 +722,7 @@
     font-family: "Bellota Regular";
     margin-right: 15px;
   }
+
   .menu_item:after
   {
     content: "";
@@ -833,6 +750,9 @@
   {
     width: 100%;
   }
+
+
+
   /* Anasayfada Bulunan 5 Öneri Paylaşımı Başlangıcı*/
   .contentbar{
     height: auto;
@@ -841,7 +761,7 @@
   .leftcircle1{
     width: 150px;
     height: 150px;
-    background-color:gray;
+    background-color: red;
     border-radius: 90px;    
     position: static;
     margin-top: -150px;   
@@ -859,11 +779,6 @@
   .content1{
     margin-left:90px;
     margin-top: -25px;
-  }
-  .image1{
-    border-radius: 900px;
-    width: 150px;
-    height: 150px;
   }
   .username1{
     font-size: 15px;
@@ -911,7 +826,7 @@
     margin-right: 75px;
     width: 150px;
     height: 150px;
-    background-color: gray;
+    background-color: red;
     border-radius: 90px;    
     position: static;
     margin-top: -150px;   
@@ -1001,7 +916,7 @@
   }
   .time{
     font-size: 12px;
-    margin-left: 525px;
+    margin-left: 505px;
     margin-top: -28px;
   }
   .favorite{    
@@ -1013,7 +928,7 @@
   /*Çift Sayılardaki Paylaşım Başlangıcı*/
   .leftcircle2{
     float: right;
-    margin-right: 4%;
+    margin-right: 23px;
   }
   .contentblock2{
     font-size: 18.4px;
@@ -1036,7 +951,7 @@
   }
   .likepoint2{
     font-size: 12px;
-    margin-left: 330px;
+    margin-left: 345px;
     margin-top: -26px;
   }
   .time2{
@@ -1112,9 +1027,13 @@
     float:right;
     margin-left:82%;
   }
+  .username1:hover{
+    
+  }
   .icons{
     visibility: visible;
     width:20px;height:20px; margin-left: -25px;margin-top: -2px;position: absolute;
-  }  
+  }
+  
 }
 /*1366 Pixel Aşağısı İçin Responsive Bitişi*/
