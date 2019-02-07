@@ -193,8 +193,8 @@
 	width: 100%;
 	height: calc(100% - 75px);
 	background-image: url("lighteffect2.png");
-	background-size: cover;
-	background-position: center;
+	background-size: 200%;
+	background-position: top;
 }
 
 #tab1_content
