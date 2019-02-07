@@ -551,7 +551,7 @@
   .copyright_block
   {
     position: relative;
-    margin-top:250px;
+    bottom: calc(-100% - 1000px);
     left: 0;
     background-color: #000;
     color: #fff;
