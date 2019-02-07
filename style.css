@@ -773,6 +773,9 @@
       .register_form{
         margin-top:15px;
       }
+      .contract{
+        font-size: 12px;
+      }
       .registerbtn{
         font-size:14px;
         font-family: "Varela Regular";
@@ -785,7 +788,7 @@
       .passinformation{
         font-size:11px;
       }
-    }  
+    }
     /*Kayıt Ol Popup---Kayıt Sekmesi Responsive*/
     /*Kayıt Ol Popup---E-Posta Onayla Sekmesi*/
       .epostaonaybtn{
@@ -889,11 +892,17 @@
   {
     width: 100%;
   }
-  /* Anasayfada Bulunan 5 Öneri Paylaşımı Başlangıcı*/
+  /* Anasayfada Bulunan Öneri Paylaşımı Başlangıcı*/
   .contentbar{
     height: auto;
   }
-  /*Tek Sayılardaki Paylaşımın Başlangıcı*/
+  .newsheader{
+    text-decoration: none;
+    color:	black;
+    font-weight: bold;
+    font-stretch: expanded;
+    font-kerning: normal;
+  }
   .leftcircle1{
     width: 150px;
     height: 150px;
@@ -905,15 +914,15 @@
   .contentblock1{
     width: 90%;
     height: 150px;
-    background-color:grey;
+    background-color:white;
     margin-left:75px;
-  }
-  
+  }  
   .header1{
     margin-left: 90px;
   }
   .content1{
     margin-left:90px;
+    color:black;
     margin-top: -25px;
   }
   .image1{
@@ -925,8 +934,8 @@
     font-size: 15px;
     margin-left: 115px;
     margin-top: -17px;
-    color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:gray;
   }
   .hitpoint{
     font-size: 15px;
@@ -934,7 +943,7 @@
     margin-left: 375px;
     margin-top: -32px;
     font-family: Arial, Helvetica, sans-serif;
-    color:blue;
+    color:gray;
   }
   .likepoint{
     font-size: 15px;
@@ -942,7 +951,7 @@
     margin-left: 725px;
     margin-top: -32px;
     font-family: Arial, Helvetica, sans-serif;
-    color:green;
+    color:gray;
   }
   .time{
     font-size: 15px;
@@ -950,7 +959,7 @@
     margin-left: 925px;
     margin-top: -32px;
     font-family: Arial, Helvetica, sans-serif;
-    color:yellow;
+    color:gray;
   }
   .favorite{    
     font-size: 15px;
@@ -958,79 +967,13 @@
     margin-left: 1125px;
     margin-top: -32px;
     font-family: Arial, Helvetica, sans-serif;
-    color:pink;
+    color:gray;
   }
-  /*Tek Sayılardaki Paylaşımın Bitişi*/
-  /*İkinci Paylaşım Başlangıcı*/
-  .leftcircle2{
-    float: right;
-    margin-right: 75px;
-    width: 150px;
-    height: 150px;
-    background-color: gray;
-    border-radius: 90px;    
-    position: static;
-    margin-top: -150px;   
-  }
-  .contentblock2{
-    width: 90%;
-    height: 150px;
-    background-color:grey;
-  }
-  .header2{
-    margin-left: 15px;
-  }
-  .content2{
-    margin-left: 15px;
-    width: 92%;
-    margin-top: -25px;
-  }
-  .username2{
-    font-size: 15px;
-    margin-left: 1125px;
-    margin-top: -17px;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  .hitpoint2{
-    font-size: 15px;
-    position: absolute;
-    margin-left: 875px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:blue;
-  }
-  .likepoint2{
-    font-size: 15px;
-    position: absolute;
-    margin-left: 725px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:green;
-  }
-  .time2{
-    font-size: 15px;
-    position: absolute;
-    margin-left: 375px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:yellow;
-  }
-  .favorite2{    
-    font-size: 15px;
-    position: absolute;
-    margin-left: 115px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:pink;
-  }
-  /*Çift Sayılardaki Paylaşım Bitişi*/
-  /*Anasayfada Bulunan 5 Öneri Paylaşımının Bitişi*/
+  /*Anasayfada Bulunan Öneri Paylaşımının Bitişi*/
 }
 /*1920 Pixel Aşağısı İçin Responsive Başlangıcı*/
 @media screen and (max-width: 1910px) {  
-  /*Anasayfada Bulunan 5 Öneri Paylaşımının Başlangıcı*/
-  /*Tek Sayılardaki Paylaşımın Başlangıcı*/
+  /*Anasayfada Bulunan Öneri Paylaşımının Başlangıcı*/
   .contentblock1{
     width: 90%;
     font-size: 18.4px;
@@ -1064,49 +1007,8 @@
     font-size: 12px;
     margin-left: 625px;
     margin-top: -28px;
-  }
-  /*Tek Sayılardaki Paylaşımın Bitişi*/
-  /*Çift Sayılardaki Paylaşım Başlangıcı*/
-  .leftcircle2{
-    float: right;
-    margin-right: 4%;
-  }
-  .contentblock2{
-    font-size: 18.4px;
-    width: 90%;
-  }
-  .content2{
-    margin-left: 15px;
-    width: 88%;
-    margin-top: -25px;
-  }
-  .username2{
-    font-size: 12px;
-    margin-left: 625px;
-    margin-top: 15px;
-    }
-  .hitpoint2{
-    font-size: 12px;
-    margin-left: 450px;
-    margin-top: -26px;
-  }
-  .likepoint2{
-    font-size: 12px;
-    margin-left: 330px;
-    margin-top: -26px;
-  }
-  .time2{
-    font-size: 12px;
-    margin-left: 205px;
-    margin-top: -26px;
-  }
-  .favorite2{    
-    font-size: 12px;
-    margin-left: 40px;
-    margin-top: -26px;
-  }
-  /*Çift Sayılardaki Paylaşım Bitişi*/
-  /*Anasafyada Bulunan 5 Öneri Paylaşımının Bitişi*/
+  }  
+  /*Anasafyada Bulunan Öneri Paylaşımının Bitişi*/
 }
 /*1920 Pixel Aşağısı İçin Responsive Bitişi*/
 /*1366 Pixel Aşağısı İçin Responsive Başlangıcı*/
@@ -1123,21 +1025,7 @@
     -webkit-box-orient: vertical; 
     overflow:hidden;
   }
-  .content2{
-    width: 83%;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical; 
-    overflow:hidden;
-  }
   .header1{    
-    width: 80%;
-    display: -webkit-box;
-    -webkit-line-clamp:1;
-    -webkit-box-orient: vertical; 
-    overflow:hidden;
-  }
-  .header2{
     width: 80%;
     display: -webkit-box;
     -webkit-line-clamp:1;
@@ -1154,20 +1042,6 @@
     margin-left:215px;}
   .favorite{visibility: hidden;
     margin-left:245px;}
-  .username2{    visibility: hidden;
-    margin-left:175px;  }
-  .hitpoint2{visibility: hidden;
-    margin-left:140px;}
-  .likepoint2{visibility: hidden;
-    margin-left:105px;}
-  .time2{visibility: hidden;
-    margin-left:70px;}
-  .favorite2{visibility: hidden;} 
-  .leftcircle2{
-    position: absolute;
-    float:right;
-    margin-left:82%;
-  }
   .icons{
     visibility: visible;
     width:20px;height:20px; margin-left: -25px;margin-top: -2px;position: absolute;
