@@ -11,6 +11,8 @@
 	color: #000;
 	border-radius: 5px;
 }
+
+
 #focus
 {
 	z-index: 10;
@@ -25,11 +27,13 @@
 	transition: 0.5s;
 	font-family: "Varela Regular";
 }
+
 #focus:target
 {
 	visibility: visible;
 	opacity: 1;
 }
+
 .sign_popup
 {
 	position: fixed;
@@ -202,10 +206,12 @@
 	color: #fff;
 	background-color: #555;
 }
+
 .active:hover
 {
 	background-color: #555;
 }
+
 .tab_contents
 {
 	position: relative;
@@ -216,6 +222,7 @@
 	background-size: cover;
 	background-position: center;
 }
+
 #tab1_content
 {
 	position: absolute;
@@ -223,12 +230,14 @@
 	height: 100%;
 
 }
+
 #tab2_content
 {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 }
+
 .option
 {
 	display: block;
@@ -237,13 +246,53 @@
 	top: 40%;
 	transform: translate(-50%,-50%);
 }
+
 .option img
 {
 	display: block;
 	margin-top: 10px;
 	margin-bottom: 50px;
 }
+
 .option img:hover
 {
 	cursor: pointer;
+}
+
+.sign_in_container
+{
+	position: absolute;
+	left: 50%;
+	top: 30%;
+	transform: translate(-50%,-50%);
+}
+
+.form_label
+{
+	display: inline-block;
+	width: 100px;
+	color: #000;
+	text-shadow: 0px 0px 15px #fff;
+}
+
+#sign_in_form label
+{
+	position: relative;
+	margin-bottom: 20px;
+	display: inline-block;
+}
+
+.green_button
+{
+	width: 100px;
+	height: 37px;
+	font-size: 16px;
+	font-weight: bold;
+	border: none;
+	border-radius: 50px;
+	border-top-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	background-color: rgb(116, 244, 66);
+	outline: none;
+	margin: 5px;
 }

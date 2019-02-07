@@ -9,8 +9,7 @@
 		document.getElementById('tab3').classList.remove("active");
 		document.getElementById('tab1_content').style.visibility = "visible";
 		document.getElementById('tab2_content').style.visibility = "hidden";
-		document.getElementById('tab3_content').style.visibility = "hidden";		
-		document.getElementById("popup_window").style.height="750px";
+		document.getElementById('tab3_content').style.visibility = "hidden";
 	}
 	else if(document.getElementById('tab2radio').checked){
 		document.getElementById('current_tab').innerHTML = "E-posta Onayla";
@@ -19,8 +18,7 @@
 		document.getElementById('tab3').classList.remove("active");
 		document.getElementById('tab2_content').style.visibility = "visible";
 		document.getElementById('tab1_content').style.visibility = "hidden";
-		document.getElementById('tab3_content').style.visibility = "hidden";		
-		document.getElementById("popup_window").style.height="300px";
+		document.getElementById('tab3_content').style.visibility = "hidden";
 	}
 	else if(document.getElementById('tab3radio').checked){
 		document.getElementById('current_tab').innerHTML = "Giriş Yap";
@@ -29,8 +27,7 @@
 		document.getElementById('tab2').classList.remove("active");
 		document.getElementById('tab3_content').style.visibility = "visible";
 		document.getElementById('tab2_content').style.visibility = "hidden";
-		document.getElementById('tab1_content').style.visibility = "hidden";		
-		document.getElementById("popup_window").style.height="400px";
+		document.getElementById('tab1_content').style.visibility = "hidden";
 	}
 	}
 

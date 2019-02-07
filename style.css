@@ -750,7 +750,7 @@
         box-shadow: 3px 3px 4px 4px #000;
       }
     /*Kayıt Ol Popup---Kayıt Sekmesi*/
-    /*Kayıt Ol Popup---Kayıt Sekmesi Responsive*/    
+    /*Kayıt Ol Popup Responsive*/
     @media screen and (max-height: 765px) {
       .register_input{
         width: 70%;
@@ -786,47 +786,7 @@
         font-size:11px;
       }
     }  
-    /*Kayıt Ol Popup---Kayıt Sekmesi Responsive*/
-    /*Kayıt Ol Popup---E-Posta Onayla Sekmesi*/
-      .epostaonaybtn{
-        width: 70%;
-        height: 40px;
-        margin-top:60px;
-        font-size:20px;
-        font-family:"Varela Regular";
-        border-radius: 7px;
-        box-shadow: 4px 4px 4px 4px #000;
-      }
-      .epostainformation{
-        text-align: center;
-        color: whitesmoke;
-        font-size: 17px;
-        font-family: "Varela Regular";
-      }
-      #tab2_content{
-        text-align: center;
-      }
-    /*Kayıt Ol Popup---E-Posta Onayla Sekmesi*/
-    /*Kayıt Ol Popup---Giriş Yap Sekmesi*/
-      .sign_input{        
-        width: 70%;
-        height: 40px;        
-        text-align: center;
-        background-color: #FFF8DC;
-        margin-top:25px;
-        color:black;
-        border-radius: 5px;
-        border:0px;
-        box-shadow:3px 3px 3px 4px #000;
-      }
-      .sign_label{  
-        margin-top: 25px;   
-        color:whitesmoke;
-      }
-      .sign_in_form{
-        text-align: center;
-      }
-    /*Kayıt Ol Popup---Giriş Yap Sekmesi*/
+    /*Kayıt Ol Popup Responsive*/
   /*Masaüstü görünümü için Menu bar */
   #desktop_menu
   {
