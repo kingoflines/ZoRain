@@ -341,6 +341,12 @@
   {
     display: none;
   }
+
+  #article_container
+  {
+    display: none;
+  }
+
 }
 
 
@@ -562,7 +568,7 @@
   .copyright_block
   {
     position: relative;
-    bottom: -120vh;
+    bottom: calc(-100% - 25em);
     left: 0;
     background-color: #000;
     color: #fff;
@@ -751,289 +757,159 @@
     width: 100%;
   }
 
+  .article_block
+  {
+    font-family: "Varela Regular";
+    position: relative;
+    box-sizing: border-box;
+    height: 150px;
+    left: 70px;
+    background-color: #777;
+    display: block;
+    width: calc(100% - 550px);
+    margin-bottom: 50px;
+  }
 
-
-  /* Anasayfada Bulunan 5 Öneri Paylaşımı Başlangıcı*/
-  .contentbar{
+  #article_container
+  {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
     height: auto;
   }
-  /*Tek Sayılardaki Paylaşımın Başlangıcı*/
-  .leftcircle1{
-    width: 150px;
-    height: 150px;
-    background-color: red;
-    border-radius: 90px;    
-    position: static;
-    margin-top: -150px;   
-  }
-  .contentblock1{
-    width: 90%;
-    height: 150px;
-    background-color:grey;
-    margin-left:75px;
-  }
-  
-  .header1{
-    margin-left: 90px;
-  }
-  .content1{
-    margin-left:90px;
-    margin-top: -25px;
-  }
-  .username1{
-    font-size: 15px;
-    margin-left: 115px;
-    margin-top: -17px;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  .hitpoint{
-    font-size: 15px;
+
+  .article_image
+  {
     position: absolute;
-    margin-left: 375px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:blue;
+    left: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline;
   }
-  .likepoint{
-    font-size: 15px;
+
+  .article_image img
+  {
+    height: 170px;
+    box-sizing: border-box;
+    width: auto;
+  }
+
+  .article_header
+  {
+    display: block;
+    font-weight: bold;
+    font-size: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .article_content
+  {
     position: absolute;
-    margin-left: 725px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:green;
+    left: 100px;
+    width: calc(100% - 120px);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: 18px;
+    font-family: "Calibri";
+
   }
-  .time{
-    font-size: 15px;
+
+  .actions
+  {
     position: absolute;
-    margin-left: 925px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:yellow;
+    bottom: 0;
+    left: 100px;
+    width: calc(100% - 100px);
+    height: 30px;
+    font-family: "Calibri";
+    white-space: nowrap;
+    overflow: hidden;
   }
-  .favorite{    
-    font-size: 15px;
+
+  .action
+  {
+    position: relative;
+    font-size: 14px;
+    top: 40%;
+    transform: translateY(-50%);
+    display: inline-block;
+  }
+
+  .action img
+  {
+    position: relative;
+    height: 20px;
+    width: auto;
+    bottom: -5px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  .action button
+  {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 20px;
+    height: 20px;
+  }
+
+  .action button img
+  {
     position: absolute;
-    margin-left: 1125px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:pink;
+    left: 5px;
+    top: 50%;
+    transform: translate(-50%,-50%);
   }
-  /*Tek Sayılardaki Paylaşımın Bitişi*/
-  /*İkinci Paylaşım Başlangıcı*/
-  .leftcircle2{
-    float: right;
-    margin-right: 75px;
-    width: 150px;
-    height: 150px;
-    background-color: red;
-    border-radius: 90px;    
-    position: static;
-    margin-top: -150px;   
+
+  .action button ~ .action_name
+  {
+    margin-left: 5px;
   }
-  .contentblock2{
-    width: 90%;
-    height: 150px;
-    background-color:grey;
+
+  .action button:hover
+  {
+    cursor: pointer;
   }
-  .header2{
-    margin-left: 15px;
+
+  .action button:hover + .action_name
+  {
+    display: inline;
   }
-  .content2{
-    margin-left: 15px;
-    width: 92%;
-    margin-top: -25px;
+
+  .action_name
+  {
+    display: none;
   }
-  .username2{
-    font-size: 15px;
-    margin-left: 1125px;
-    margin-top: -17px;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  .action img:hover + .action_name
+  {
+    display: inline;
   }
-  .hitpoint2{
-    font-size: 15px;
-    position: absolute;
-    margin-left: 875px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:blue;
-  }
-  .likepoint2{
-    font-size: 15px;
-    position: absolute;
-    margin-left: 725px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:green;
-  }
-  .time2{
-    font-size: 15px;
-    position: absolute;
-    margin-left: 375px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:yellow;
-  }
-  .favorite2{    
-    font-size: 15px;
-    position: absolute;
-    margin-left: 115px;
-    margin-top: -32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:pink;
-  }
-  /*Çift Sayılardaki Paylaşım Bitişi*/
-  /*Anasayfada Bulunan 5 Öneri Paylaşımının Bitişi*/
+  /* Anasayfada Bulunan 5 Öneri Paylaşımı Başlangıcı*/
+
+
+
+
+/* 900px-1600px arası ekranlar için CSS bitişi. */
 }
-/*1920 Pixel Aşağısı İçin Responsive Başlangıcı*/
-@media screen and (max-width: 1910px) {  
-  /*Anasayfada Bulunan 5 Öneri Paylaşımının Başlangıcı*/
-  /*Tek Sayılardaki Paylaşımın Başlangıcı*/
-  .contentblock1{
-    width: 90%;
-    font-size: 18.4px;
-  }  
-  .content1{
-    margin-left:90px;
-    margin-top: -25px;
-    width: 85%;
+
+/* 1360px ve üzerinde yazıların gözükmesi */
+@media screen and (min-width: 1360px)
+{
+  .action_name
+  {
+    display: inline;
   }
-  .username1{
-    font-size: 12px;
-    margin-left: 115px;
-    margin-top:15px;
-    }
-  .hitpoint{
-    font-size: 12px;
-    margin-top:-26px;
-    margin-left: 235px;
-  }
-  .likepoint{
-    font-size: 12px;
-    margin-left:405px;
-    margin-top: -27.5px;
-  }
-  .time{
-    font-size: 12px;
-    margin-left: 505px;
-    margin-top: -28px;
-  }
-  .favorite{    
-    font-size: 12px;
-    margin-left: 625px;
-    margin-top: -28px;
-  }
-  /*Tek Sayılardaki Paylaşımın Bitişi*/
-  /*Çift Sayılardaki Paylaşım Başlangıcı*/
-  .leftcircle2{
-    float: right;
-    margin-right: 23px;
-  }
-  .contentblock2{
-    font-size: 18.4px;
-    width: 90%;
-  }
-  .content2{
-    margin-left: 15px;
-    width: 88%;
-    margin-top: -25px;
-  }
-  .username2{
-    font-size: 12px;
-    margin-left: 625px;
-    margin-top: 15px;
-    }
-  .hitpoint2{
-    font-size: 12px;
-    margin-left: 450px;
-    margin-top: -26px;
-  }
-  .likepoint2{
-    font-size: 12px;
-    margin-left: 345px;
-    margin-top: -26px;
-  }
-  .time2{
-    font-size: 12px;
-    margin-left: 205px;
-    margin-top: -26px;
-  }
-  .favorite2{    
-    font-size: 12px;
-    margin-left: 40px;
-    margin-top: -26px;
-  }
-  /*Çift Sayılardaki Paylaşım Bitişi*/
-  /*Anasafyada Bulunan 5 Öneri Paylaşımının Bitişi*/
 }
-/*1920 Pixel Aşağısı İçin Responsive Bitişi*/
-/*1366 Pixel Aşağısı İçin Responsive Başlangıcı*/
-@media screen and (max-width: 1360px) { 
-  .trends_block{
-    width: 25%;
-  }
-  .slider{
-    width: 72%;
-  }
-  .content1{width: 83%;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical; 
-    overflow:hidden;
-  }
-  .content2{
-    width: 83%;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical; 
-    overflow:hidden;
-  }
-  .header1{    
-    width: 80%;
-    display: -webkit-box;
-    -webkit-line-clamp:1;
-    -webkit-box-orient: vertical; 
-    overflow:hidden;
-  }
-  .header2{
-    width: 80%;
-    display: -webkit-box;
-    -webkit-line-clamp:1;
-    -webkit-box-orient: vertical; 
-    overflow:hidden;
-  }
-  .username1{    visibility: hidden;
-  margin-left: 115px;  }
-  .hitpoint{visibility: hidden;
-    margin-left: 150px;}
-  .likepoint{visibility: hidden;
-  margin-left:185px;}
-  .time{visibility: hidden;
-    margin-left:215px;}
-  .favorite{visibility: hidden;
-    margin-left:245px;}
-  .username2{    visibility: hidden;
-    margin-left:175px;  }
-  .hitpoint2{visibility: hidden;
-    margin-left:140px;}
-  .likepoint2{visibility: hidden;
-    margin-left:105px;}
-  .time2{visibility: hidden;
-    margin-left:70px;}
-  .favorite2{visibility: hidden;} 
-  .leftcircle2{
-    position: absolute;
-    float:right;
-    margin-left:82%;
-  }
-  .username1:hover{
-    
-  }
-  .icons{
-    visibility: visible;
-    width:20px;height:20px; margin-left: -25px;margin-top: -2px;position: absolute;
-  }
-  
+
+/*1600px üzeri ekranlar için CSS başlangıcı*/
+@media screen and (min-width: 1600px)
+{
+
 }
-/*1366 Pixel Aşağısı İçin Responsive Bitişi*/

@@ -43,9 +43,9 @@ function scrollFunction(x) {
     document.getElementById("mid_block").style.top = "70px"
     document.getElementById("mid_block").style.height = "calc(100% - 70px)";
     document.getElementById("trends_block").style.top = "100px";
-    document.getElementById("slider").style.top = "100px";
     document.getElementById("desktop_menu").style.fontSize = "14px";
     document.getElementById("desktop_menu").style.left ="160px";
+    document.getElementById("article_container").style.top ="130px";
 
   } else {
     document.getElementById("top_menu").style.height = "150px";
@@ -55,10 +55,9 @@ function scrollFunction(x) {
     document.getElementById("mid_block").style.top = "185px";
     document.getElementById("mid_block").style.height = "calc(100% - 185px)";
     document.getElementById("trends_block").style.top = "0px";
-    document.getElementById("slider").style.top = "10px";
     document.getElementById("desktop_menu").style.fontSize = "28px";
     document.getElementById("desktop_menu").style.left ="260px";
-
+    document.getElementById("article_container").style.top ="30px";
   }
 
 }
