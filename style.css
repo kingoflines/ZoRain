@@ -855,9 +855,14 @@
     cursor: pointer;
   }
 
+  .action img:hover
+  {
+    cursor: pointer;
+  }
+
   .action button:hover + .action_name
   {
-    max-width: 100px;
+    max-width: 220px;
   }
 
   .action_name
@@ -870,7 +875,7 @@
 
   .action img:hover + .action_name
   {
-    max-width: 150px;
+    max-width: 220px;
   } /*Kayıt Ol Popup---Kayıt Sekmesi*/
   .register_input{
     width: 70%;
@@ -1005,7 +1010,8 @@
   display: block;
   font-size: 14px;
   position: relative;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
