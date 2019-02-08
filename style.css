@@ -327,11 +327,6 @@
     display: none;
   }
 
-  .copyright_block
-  {
-    display: none;
-  }
-
   .trends_block
   {
     display: none;
@@ -380,6 +375,7 @@
     background-color: rgba(6,0,22); /* rgb(6,0,22) = #060016 */
     background-image: linear-gradient(180deg, rgba(29,45,107,1) 0%, rgba(72,117,117,1) 100%);
     transition: 0.5s;
+    overflow: visible;
   }
 
   .top_menu img
@@ -399,6 +395,7 @@
 
   .sign_in_up
   {
+    z-index: -1;
     display: inline-block;
     position: absolute;
     top: 150px;
@@ -458,6 +455,7 @@
   
   .mid_block
   {
+    z-index: -1;
     position: fixed;
     top: 185px;
     left: 0;
@@ -545,41 +543,20 @@
 
   .trends_block
   {
-    position: absolute;
+    position: fixed;
     display: block;
     right: 0;
-    top: 0;
+    top: 190px;
     height: auto;
     overflow-x: hidden;
     overflow-y: hidden;
+    transition: 0.5s;
   }
 
-  .trends_block iframe
-  {
-    border: none;
-    outline: none;
-  }
 
   .trends_block::-webkit-scrollbar
   {
     visibility: hidden;
-  }
-
-  .copyright_block
-  {
-    position: relative;
-    bottom: calc(-100% - 25em);
-    left: 0;
-    background-color: #000;
-    color: #fff;
-    width: 100%;
-    height: 100px;
-  }
-  .copyright_block p
-  {
-    position: relative;
-    justify-content: center;
-    text-align: center;
   }
 
   .mid_block::-webkit-scrollbar
@@ -689,9 +666,8 @@
   {
     z-index: 0;
     display: block;
-    
     width: 420px;
-    height: 300px;
+    height: 150px;
     object-fit: cover;
   }
 
@@ -700,7 +676,7 @@
     z-index: 1;
     position: absolute;
     text-align: center;
-    bottom: 20px;
+    bottom: 0;
     left: 50%;
     width: 100%;
     height: auto;
@@ -722,6 +698,7 @@
 
   .menu_item
   {
+    display: inline-block;
     color: #fff;
     width: auto;
     position: relative;
@@ -772,6 +749,7 @@
 
   #article_container
   {
+    z-index: 1;
     position: absolute;
     top: 30px;
     left: 0;
@@ -879,17 +857,20 @@
 
   .action button:hover + .action_name
   {
-    display: inline;
+    max-width: 100px;
   }
 
   .action_name
   {
-    display: none;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 0;
+    transition: 0.5s;
   }
 
   .action img:hover + .action_name
   {
-    display: inline;
+    max-width: 150px;
   } /*Kayıt Ol Popup---Kayıt Sekmesi*/
   .register_input{
     width: 70%;
@@ -958,7 +939,7 @@
     text-align: center;
   }
 /*Kayıt Ol Popup---E-Posta Onayla Sekmesi*/
-/*Kayıt Ol Popup---Giriş Yap Sekmesi*/
+/*Kayıt Ol Popup---Giriş Yap Sekmesi BAŞLANGIÇ*/
   .sign_input{        
     width: 70%;
     height: 40px;        
@@ -993,7 +974,63 @@
     border: 0px;
     box-shadow: 3px 3px 4px 4px #000;
   }
-/*Kayıt Ol Popup---Giriş Yap Sekmesi*/
+/*Kayıt Ol Popup---Giriş Yap Sekmesi BİTİŞ*/
+
+/* DROPDOWN BAŞLANGIÇ */
+
+.dropdown_menu
+{
+  visibility: hidden;
+  opacity: 0;
+  z-index: 90;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0,0,0,0.8);
+  transition: 0.2s;
+}
+
+.menu_item:hover > .dropdown_menu
+{
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdown_item
+{
+  left: 5px;
+  display: block;
+  font-size: 14px;
+  position: relative;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.dropdown_item a
+{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* DROPDOWN BİTİŞ */
+
+/* 900px-1600px arası ekranlar için CSS bitişi. */
+}
+
+/* 1360px ve üzerinde yazıların gözükmesi */
+@media screen and (min-width: 1360px)
+{
+  .action_name
+  {
+    display: inline;
+  }
+}
+
 /*Kayıt Ol Popup---Kayıt Sekmesi Responsive*/    
 @media screen and (max-height: 765px) {
   .register_input{
@@ -1048,17 +1085,6 @@
   }
 }
 /*Kayıt Ol Popup---Kayıt Sekmesi Responsive*/
-/* 900px-1600px arası ekranlar için CSS bitişi. */
-}
-
-/* 1360px ve üzerinde yazıların gözükmesi */
-@media screen and (min-width: 1360px)
-{
-  .action_name
-  {
-    display: inline;
-  }
-}
 
 /*1600px üzeri ekranlar için CSS başlangıcı*/
 @media screen and (min-width: 1600px)

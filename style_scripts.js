@@ -42,7 +42,7 @@ function scrollFunction(x) {
     document.getElementById("sign_in_up").style.opacity = "0";
     document.getElementById("mid_block").style.top = "70px"
     document.getElementById("mid_block").style.height = "calc(100% - 70px)";
-    document.getElementById("trends_block").style.top = "100px";
+    document.getElementById("trends_block").style.top = "90px";
     document.getElementById("desktop_menu").style.fontSize = "14px";
     document.getElementById("desktop_menu").style.left ="160px";
     document.getElementById("article_container").style.top ="130px";
@@ -54,7 +54,7 @@ function scrollFunction(x) {
     document.getElementById("sign_in_up").style.opacity = "1";
     document.getElementById("mid_block").style.top = "185px";
     document.getElementById("mid_block").style.height = "calc(100% - 185px)";
-    document.getElementById("trends_block").style.top = "0px";
+    document.getElementById("trends_block").style.top = "190px";
     document.getElementById("desktop_menu").style.fontSize = "28px";
     document.getElementById("desktop_menu").style.left ="260px";
     document.getElementById("article_container").style.top ="30px";
