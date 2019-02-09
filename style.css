@@ -1093,6 +1093,11 @@
   object-fit: cover;
 }
 
+.top_item i
+{
+  margin-left: 5px;
+}
+
 #user_panel
   {
     position: absolute;
@@ -1109,22 +1114,24 @@
   {
     user-select: none;
     position: absolute;
-    right: -2px;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     box-sizing: border-box;
-    width: 25px;
-    height: 25px;
-    border: 1px solid #fff;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     display: flex;
-    color: #fff;
-    background-color: #ea6d07;
+    text-align: center;
+    color: #000;
+    background-image: linear-gradient(to right,#42f450,#f8ff44,#f44141);
+    background-position: 50%;
+    background-size: 1000%;
   }
 
   .unread_messages p
   {
-    font-size: 16px;
+    font-size: 14px;
     font-family: "Varela Regular";
     margin: auto;
   }
