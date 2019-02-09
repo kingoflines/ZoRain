@@ -36,6 +36,9 @@ function scrollFunction(x) {
 
   if ($(window).width() >= 901) {
       if (document.getElementById(x).scrollTop >= 80 ) {
+         if (document.getElementById("mail_verify") != null) {
+      document.getElementById("zologo").style.marginTop = "10px";
+    }
     document.getElementById("top_menu").style.height = "70px";
     document.getElementById("zologo").style.height = "50px";
     document.getElementById("sign_in_up").style.height ="0px";
@@ -48,6 +51,7 @@ function scrollFunction(x) {
     document.getElementById("article_container").style.top ="130px";
 
   } else {
+    document.getElementById("zologo").style.marginTop = "0px";
     document.getElementById("top_menu").style.height = "150px";
     document.getElementById("zologo").style.height = "100px";
     document.getElementById("sign_in_up").style.height = "35px";
