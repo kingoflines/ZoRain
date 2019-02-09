@@ -530,10 +530,12 @@
   .container
   {
     position: absolute;
-    left: calc(50% - 80px);
+    left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
     height: 25px;
+    max-width: 100%;
+    width: 620px;
   }
 
   .mobile_search
@@ -1028,7 +1030,7 @@
 
 /* DROPDOWN BİTİŞ */
 
-/* Email onay barı başlangıç */
+/* Email onay barı BAŞLANGIÇ */
 
 #mail_verify
 {
@@ -1053,6 +1055,24 @@
   width: 100%;
   text-align: center;
 }
+
+/* Email onay barı BİTİŞ */
+
+/* Giriş Yapmış Kullanıcı Bloğu BAŞLANGIÇ */
+
+.top_item
+{
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100px;
+  height: 35px;
+}
+
+/* Giriş Yapmış Kullanıcı Bloğu BİTİŞ*/
 
 /* 900px-1600px arası ekranlar için CSS bitişi. */
 }
