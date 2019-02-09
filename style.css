@@ -410,9 +410,7 @@
 
   .sign_upb
   {
-    position: absolute;
-    top: 0;
-    right: -80px;
+    position: relative;
     outline: none;
     background-color: #136cf9;
     color: #fff;
@@ -432,6 +430,7 @@
 
   #sign_inb
   {
+    position: relative;
     background-color: rgb(116, 244, 66);
     outline: none;
     color: #000;
@@ -534,8 +533,6 @@
     top: 50%;
     transform: translate(-50%,-50%);
     height: 25px;
-    max-width: 100%;
-    width: 620px;
   }
 
   .mobile_search
@@ -1068,9 +1065,69 @@
   box-sizing: border-box;
   margin-left: 10px;
   margin-right: 10px;
-  width: 100px;
-  height: 35px;
+  width: 150px;
+  height: 25px;
 }
+
+.top_item:hover
+{
+  cursor: pointer;
+  text-shadow: 0px 0px 10px #07ea1d, 0px 0px 10px #07ea1d;
+}
+
+.top_item:hover > *
+{
+  text-shadow: none;
+}
+
+.top_item img
+{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -10px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+#user_panel
+  {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 25px;
+    width: 900px;
+  }
+
+  /* Okunmamış Mesaj Göstergesi */
+
+  .unread_messages
+  {
+    user-select: none;
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    color: #fff;
+    background-color: #ea6d07;
+  }
+
+  .unread_messages p
+  {
+    font-size: 16px;
+    font-family: "Varela Regular";
+    margin: auto;
+  }
 
 /* Giriş Yapmış Kullanıcı Bloğu BİTİŞ*/
 
