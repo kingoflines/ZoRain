@@ -1095,7 +1095,7 @@
 
 .top_item i
 {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 #user_panel
@@ -1115,7 +1115,7 @@
     user-select: none;
     position: absolute;
     right: 0;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     box-sizing: border-box;
     width: 20px;
@@ -1135,6 +1135,13 @@
     font-family: "Varela Regular";
     margin: auto;
   }
+
+  #log_out:hover
+  {
+    text-shadow: 0px 0px 10px #f71d1d, 0px 0px 10px #f71d1d;
+  }
+
+  /* Okunmamış Mesaj Bitiş /*
 
 /* Giriş Yapmış Kullanıcı Bloğu BİTİŞ*/
 
