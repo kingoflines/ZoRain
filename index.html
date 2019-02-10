@@ -183,7 +183,7 @@
                 $kullanicisayisi=$kullanicikontrol->rowCount();
                 if($kullanicisayisi==0){
                   $kullanici_postaonay="false";             
-                  $kullanici_resimlinki="data/images/doga.jpg";
+                  $kullanici_resimlinki="data/images/doga1.jpg";
                   $sorgu=$db->prepare("INSERT INTO kullanicilar SET adi_soyadi=?,kullanici_adi=?,kullanici_sifre=?,kullanici_eposta=?,kullanici_postaonay=?,kullanici_resimlinki=?");
                   $ekle=$sorgu->execute([$adi_soyadi,$kullanici_adi,$kullanici_sifre,$kullanici_eposta,$kullanici_postaonay,$kullanici_resimlinki]);
                   if($ekle){     
