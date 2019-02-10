@@ -1,3 +1,21 @@
+<?php
+  session_start();
+  ob_start();
+  require("ayar.php");
+  if(!empty($_SESSION["kullanici_adi"])){
+    ?><meta http-equiv="refresh" content="0; url=user.php"><?php
+  }
+  $kayitkontrol=1;
+  function kisalt($kelime, $str)
+      {
+        if (strlen($kelime) > $str)
+        {
+          if (function_exists("mb_substr")) $kelime = mb_substr($kelime, 0, $str, "UTF-8").'..';
+          else $kelime = substr($kelime, 0, $str).'..';
+        }
+        return $kelime;
+      }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +32,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9"> 
   <script type="text/javascript" src="jquery-3.3.1.min.js">
   </script>
-  <script src="JSPOPUP.js"></script>
+  <script src="JSPOPUP.js"></script>  
+<script src="https://www.google.com/recaptcha/api.js?hl=tr"></script>
   <script src="/responsiveivons.js"></script>
   <link rel="stylesheet" type="text/css" href="fonts.css">
 </head>
@@ -136,7 +155,7 @@
       <input onchange="tabcheck()" type="radio" name="tab" id="tab1radio"></label>
       
       <label for="tab2radio" class="tab" id="tab2"><p>E-posta Onay</p>
-      <input onchange="tabcheck()" type="radio" name="tab" id="tab2radio"></label>
+      <input type="radio" name="tab" id="tab2radio"></label>
 
       <label for="tab3radio" class="tab" id="tab3"><p>Giriş Yap</p>
       <input onchange="tabcheck()" type="radio" name="tab" id="tab3radio"></label>
@@ -146,9 +165,76 @@
     </div>
 
     <div class="tab_contents">
-
+    <?php        
+    $kayitsekmesiac=0;  
+     $hatamesaji="";
+     $kayitdurdur=0;
+          if(isset($_POST["registerform"])){
+            
+              
+            if (isset($_POST['g-recaptcha-response'])) {
+              $captcha = $_POST['g-recaptcha-response'];
+          }          
+          if (!$captcha) {
+            $hatamesaji="Lütfen Bot Olmadığınızı Doğrulayın";       
+            $kayitdurdur=1;       
+        } 
+          $kontrol = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LfGP5AUAAAAALckBfxtm6m1wzQjEr6U_qopW58g&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
+          if ($kontrol == false) {
+            $hatamesaji="Spam Kayıt Uyarısı";
+                                  }
+        else{
+          if(isset($_POST["username"]) && isset($_POST["userpass"]) && isset($_POST["usernick"]) && isset($_POST["useremail"]) && $kayitdurdur==0){
+              $adi_soyadi=$_POST["username"];
+              $kullanici_adi=$_POST["usernick"];
+              $kullanici_sifre=$_POST["userpass"];
+              $kullanici_sifre_tekrar=$_POST["userpassagain"];
+              $kullanici_eposta=$_POST["useremail"];
+              if(empty($adi_soyadi) || empty($kullanici_adi) ||empty($kullanici_sifre)|| empty($kullanici_sifre_tekrar) || empty($kullanici_eposta )){
+                $hatamesaji="Lütfen Boş Alan Bırakmayın";
+              }
+              else if($kullanici_sifre!=$kullanici_sifre_tekrar){
+                $hatamesaji="Şifreler Eşleşmiyor";
+              }
+              else { 
+                $kullanicikontrol=$db->query("SELECT * FROM kullanicilar where kullanici_adi='$kullanici_adi'");
+                $kullanicisayisi=$kullanicikontrol->rowCount();
+                if($kullanicisayisi==0){
+                  $kullanici_postaonay="false";             
+                  $kullanici_resimlinki="data/images/doga1.jpg";
+                  $sorgu=$db->prepare("INSERT INTO kullanicilar SET adi_soyadi=?,kullanici_adi=?,kullanici_sifre=?,kullanici_eposta=?,kullanici_postaonay=?,kullanici_resimlinki=?");
+                  $ekle=$sorgu->execute([$adi_soyadi,$kullanici_adi,$kullanici_sifre,$kullanici_eposta,$kullanici_postaonay,$kullanici_resimlinki]);
+                  if($ekle){     
+                    $kayitkontrol="registertrue";   
+                    setcookie("register", "registertrue",time() + (15));    
+                    ?><meta http-equiv="refresh" content="0; url=index.php#focus"><?php
+                  }
+                  else{
+                    $hata=$sorgu->errorInfo();
+                    echo "hata: ".$hata[2];
+                  }
+                }
+                else{
+                  $hatamesaji="Kullanıcı Adı Malesef Alınmış";
+                }
+              }
+            }          
+        }  
+      }
+          ?>
       <div id="tab1_content" style="visibility: hidden; overflow: auto;"> 
-        <form action="" method="POST" class="register_form">
+        <form action="" method="POST" id="register_form" class="register_form">
+          <label for="" class="errormessage" style="visibility:hidden;" id="hatamesaji">
+            <?php
+            if(empty($hatamesaji)){
+
+            }
+            else{
+            echo $hatamesaji;   
+            $kayitsekmesiac=1;         
+            }
+            ?>
+          </label><br><br>
           <label for="" class="register_label">Adınız Soyadınız*</label><br>
           <input type="text" name="username" id="username" class="register_input"><br><br>
           <label for="" class="register_label">Kullanıcı Adınız*</label><br>
@@ -165,36 +251,53 @@
           <input type="email" name="useremail" id="useremail" class="register_input"><br><br>
           <label for="" class="passinformation">E-Posta Doğrulaması Gerekmektedir. Lütfen Doğru Girin</label><br>
           <input type="checkbox" name="" id="contract" class="contractbox"><b class="contract">Kullanıcı <a href="#">Sözleşmesini</a> Okudum Ve Kabul Ediyorum</b><br><br>
-          <input type="submit" value="Kayıt Ol" class="registerbtn">
+          <div class="g-recaptcha" data-sitekey="6LfGP5AUAAAAAP_Kr1qrLNlk9aViyziD7cp1OGf1"></div><br>
+          <input type="submit" name="registerform" value="Kayıt Ol" class="registerbtn">
         </form>
         <br><br>
-
       </div>
-
+      
       <div id="tab2_content" style="visibility: hidden">
+      <label for="" class="registersuccess">Kayıt İşlemi Başarı İle Tamamlandı Lütfen E-Posta Adresinizi Onaylayınız.</label>
         <button class="epostaonaybtn">Doğrulama İşlemi İçin E-Posta Adresime Git</button><br><br>
         <label for="" class="epostainformation">Doğrulama İşlemi Gerçekleştiğinde Otomatik Olarak Giriş Yap Sekmesine Yönlendirilirsiniz...</label>
       </div>
 
       <div id="tab3_content" style="visibility: hidden;">
-        <form action="" class="sign_form">
+        <form action="" method="post" class="sign_form">
+        <?php
+      if(isset($_POST["signform"]))
+      {
+        $giris_kullaniciadi =$_POST["signusername"];
+        $giris_sifre =$_POST["signuserpass"];
+        $query  = $db->query("SELECT * FROM kullanicilar WHERE kullanici_adi='$giris_kullaniciadi' && kullanici_sifre='$giris_sifre'",PDO::FETCH_ASSOC);
+        if ( $say = $query -> rowCount() ){
+          if( $say > 0 ){
+            $_SESSION["kullanici_adi"]=$giris_kullaniciadi;?><meta http-equiv="refresh" content="0; url=user.php"><?php
+          }else{            
+            
+          }
+        }
+        else{
+          ?><label for="" class="yanliskullanici" id="yanliskullanici"><?php echo "Kullanıcı Adı Yada Şifre Hatalı"; ?></label><br><br> <script>
+              
+              document.getElementById('tab3radio').click();
+              document.getElementById("popup_window").style.height="420px";
+            </script><?php
+        }
+      }      
+      ?></label>
           <label for="" class="sign_label">Kullanıcı Adınız</label><br>
           <input type="text" name="signusername" id="signusername" class="sign_input"><br><br>
           <label for="" class="sign_label">Şifreniz</label><br>
           <input type="password" name="signuserpass" id="signuserpass" class="sign_input"><br><br>
           <input type="checkbox" name="remember" id="remember"> <span class="rememberme"> Beni Hatırla</span> <a href="#" class="forgotpass">Şifremi Unuttum</a><br><br>
-          <input type="button" value="Giriş Yap" class="signbtn">
+          <input type="submit" name="signform" value="Giriş Yap" class="signbtn">
         </form>
       </div>
-
     </div>
-
-
-  </div>
-  
-</div>
-    
-  
+  </div>  
+</div>      
   <div class="open_menu" id="omenu1">
     <button class="header" onclick="closemenu()">MENU</button>
     <span class="container">
@@ -210,105 +313,71 @@
       <button class="mobile_sign_in hoverlay">Giriş yap</button>
       <button class="mobile_sign_up hoverlay">Kayıt ol</button>
     </div>
-  </div>
-  
+  </div> 
   
   <div class="mid_block" id="mid_block" onscroll="scrollFunction('mid_block')">
 
     <div id="article_container">
-
-   <div class="article_block">
-    <span class="article_image"><img src="data/images/bayrak.png"></span>
+    <?php      
+        
+        $makalecek=$db->query("SELECT * FROM makaleler limit 5"); 
+        foreach($makalecek as $row){    
+          $id=$row["makale_id"];
+          $kullanicisi_id=$row["kullanici_id"];
+          $kullanicicek=$db->query("SELECT * FROM kullanicilar where kullanici_id='$kullanicisi_id'",PDO::FETCH_ASSOC);
+          foreach($kullanicicek as $row2){
+            $kullaniciad=$row2["kullanici_adi"];
+          }         
+          
+      ?>
+   <div class="article_block" id="<?php echo $row["makale_id"];?>">
+    <span class="article_image"><img src="<?php echo $row["resim_linki"];?>" class="resim"></span>
     <span class="article_content">
-    <span class="article_header">Zo-Rain Web Sitesi Açıldı Uzun Başlık Deneyelim LALALADAJSGHDASJKG Hoppa cubba</span>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae accusantium ad velit necessitatibus numquam eum ea nulla maiores ducimus voluptate veniam fugiat asperiores quaerat, cum officiis suscipit perspiciatis officia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur totam perferendis, aliquid a mollitia sapiente earum quidem eum saepe esse, quae ipsam consequatur molestiae laborum minus nobis assumenda. Totam, iusto!
+    <span class="article_header"><?php echo $row["makale_baslik"];?></span>
+          <?php echo $row["makale_icerik"];?>
     </span>
-
     <span class="actions">
-
-      <span class="action"><img src="data/images/user.png"><span class="action_name">KingOfLines</span></span>
-      <span class="action"><img src="data/images/view2.png"><span class="action_name">127 B kez Görüntelendi</span></span>
-      <span class="action"><button><img src="data/images/like.png"></button><span class="action_name">35460 B beğeni</span></span>
-      <span class="action"><img src="data/images/clock.png"><span class="action_name">05.02.2019</span></span>
-      <span class="action"><button><img src="data/images/add.png"></button><span class="action_name">Favorilerime Ekle</span></span>
-      
+      <span class="action"><img src="data/images/user.png"><span class="action_name"><?php echo $kullaniciad;?></span></span>
+      <span class="action"><img src="data/images/view2.png"><span class="action_name"><?php
+        $hitpoint=$row["goruntulenme_sayisi"];
+          if($hitpoint>1000 && $hitpoint <1000000){
+            $hitpoint=floor($hitpoint/1000);
+            echo $hitpoint." B";
+          }
+          else if($hitpoint>1000000){
+            $hitpoint=floor($hitpoint/1000000);
+            echo $hitpoint." M";
+          }
+          else {
+            echo $hitpoint;
+          }
+      ?> kez Görüntelendi</span></span> 
+      <span class="action"><button><img src="data/images/like.png"></button><span class="action_name">
+          <?php
+            $likepoint=$row["begeni_sayisi"];
+            if($likepoint>1000 && $likepoint<1000000){
+              $likepoint=floor($likepoint/1000);
+              echo $likepoint." B";
+            }
+            else if($likepoint>1000000){
+              $likepoint=floor($likepoint/1000000);
+              echo $likepoint." M";
+            }
+            else{
+              echo $likepoint;
+            }         
+          ?>      
+      beğeni</span></span>
+      <span class="action"><img src="data/images/clock.png"><span class="action_name"><?php echo $row["paylasim_zamani"];?></span></span>
+      <span class="action"> <button><img src="data/images/add.png"></button><span class="action_name">Favorilerime Ekle</span></span>      
     </span>
    </div>
-
-   <div class="article_block">
-    <span class="article_image"><img src="data/images/bayrak.png"></span>
-    <span class="article_content">
-    <span class="article_header">Zo-Rain Web Sitesi Açıldı Uzun Başlık Deneyelim LALALADAJSGHDASJKG Hoppa cubba</span>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae accusantium ad velit necessitatibus numquam eum ea nulla maiores ducimus voluptate veniam fugiat asperiores quaerat, cum officiis suscipit perspiciatis officia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur totam perferendis, aliquid a mollitia sapiente earum quidem eum saepe esse, quae ipsam consequatur molestiae laborum minus nobis assumenda. Totam, iusto!
-    </span>
-
-    <span class="actions">
-
-      <span class="action"><img src="data/images/user.png"><span class="action_name">KingOfLines</span></span>
-      <span class="action"><img src="data/images/view2.png"><span class="action_name">127 B kez Görüntelendi</span></span>
-      <span class="action"><button><img src="data/images/like.png"></button><span class="action_name">35460 B beğeni</span></span>
-      <span class="action"><img src="data/images/clock.png"><span class="action_name">05.02.2019</span></span>
-      <span class="action"><button><img src="data/images/add.png"></button><span class="action_name">Favorilerime Ekle</span></span>
-      
-    </span>
-   </div>
-
-   <div class="article_block">
-    <span class="article_image"><img src="data/images/bayrak.png"></span>
-    <span class="article_content">
-    <span class="article_header">Zo-Rain Web Sitesi Açıldı Uzun Başlık Deneyelim LALALADAJSGHDASJKG Hoppa cubba</span>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae accusantium ad velit necessitatibus numquam eum ea nulla maiores ducimus voluptate veniam fugiat asperiores quaerat, cum officiis suscipit perspiciatis officia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur totam perferendis, aliquid a mollitia sapiente earum quidem eum saepe esse, quae ipsam consequatur molestiae laborum minus nobis assumenda. Totam, iusto!
-    </span>
-
-    <span class="actions">
-
-      <span class="action"><img src="data/images/user.png"><span class="action_name">KingOfLines</span></span>
-      <span class="action"><img src="data/images/view2.png"><span class="action_name">127 B kez Görüntelendi</span></span>
-      <span class="action"><button><img src="data/images/like.png"></button><span class="action_name">35460 B beğeni</span></span>
-      <span class="action"><img src="data/images/clock.png"><span class="action_name">05.02.2019</span></span>
-      <span class="action"><button><img src="data/images/add.png"></button><span class="action_name">Favorilerime Ekle</span></span>
-      
-    </span>
-   </div>
-
-   <div class="article_block">
-    <span class="article_image"><img src="data/images/bayrak.png"></span>
-    <span class="article_content">
-    <span class="article_header">Zo-Rain Web Sitesi Açıldı Uzun Başlık Deneyelim LALALADAJSGHDASJKG Hoppa cubba</span>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae accusantium ad velit necessitatibus numquam eum ea nulla maiores ducimus voluptate veniam fugiat asperiores quaerat, cum officiis suscipit perspiciatis officia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur totam perferendis, aliquid a mollitia sapiente earum quidem eum saepe esse, quae ipsam consequatur molestiae laborum minus nobis assumenda. Totam, iusto!
-    </span>
-
-    <span class="actions">
-
-      <span class="action"><img src="data/images/user.png"><span class="action_name">KingOfLines</span></span>
-      <span class="action"><img src="data/images/view2.png"><span class="action_name">127 B kez Görüntelendi</span></span>
-      <span class="action"><button><img src="data/images/like.png"></button><span class="action_name">35460 B beğeni</span></span>
-      <span class="action"><img src="data/images/clock.png"><span class="action_name">05.02.2019</span></span>
-      <span class="action"><button><img src="data/images/add.png"></button><span class="action_name">Favorilerime Ekle</span></span>
-      
-    </span>
-   </div>
-
-   <div class="article_block">
-    <span class="article_image"><img src="data/images/bayrak.png"></span>
-    <span class="article_content">
-    <span class="article_header">Zo-Rain Web Sitesi Açıldı Uzun Başlık Deneyelim LALALADAJSGHDASJKG Hoppa cubba</span>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae accusantium ad velit necessitatibus numquam eum ea nulla maiores ducimus voluptate veniam fugiat asperiores quaerat, cum officiis suscipit perspiciatis officia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur totam perferendis, aliquid a mollitia sapiente earum quidem eum saepe esse, quae ipsam consequatur molestiae laborum minus nobis assumenda. Totam, iusto!
-    </span>
-
-    <span class="actions">
-
-      <span class="action"><img src="data/images/user.png"><span class="action_name">KingOfLines</span></span>
-      <span class="action"><img src="data/images/view2.png"><span class="action_name">127 B kez Görüntelendi</span></span>
-      <span class="action"><button><img src="data/images/like.png"></button><span class="action_name">35460 B beğeni</span></span>
-      <span class="action"><img src="data/images/clock.png"><span class="action_name">05.02.2019</span></span>
-      <span class="action"><button><img src="data/images/add.png"></button><span class="action_name">Favorilerime Ekle</span></span>
-      
-    </span>
-   </div>
-
-
-
+          <?php
+        } ?>
+        <div class="menu" id="menu_<?php echo $id;?>">
+          <span class="more" id="<?php echo $id;?>">Daha Fazlasını Göster</span>
+          <span class="moreloading" style="display:none;" id="<?php echo $id;?>">Yükleniyor...</span>
+        </div>
     </div>
 
   	<div class="trends_block" id="trends_block">
@@ -364,6 +433,34 @@
 
 
   </div>
-  
+  <?php
+        if($kayitsekmesiac==1){
+      ?><script type="text/javascript">
+        
+      tab_signup();
+      document.getElementById("hatamesaji").style.visibility="visible";      
+      document.getElementById("register_form").style.marginTop="25px";                  
+            </script><?php
+      }
+      ?>
+  <?php 
+    $usern=$_SESSION["kayitkontrol"];
+            if(isset($_COOKIE["register"])){
+              ?>
+                <script type="text/javascript">  
+                
+		document.getElementById('tab2radio').click();
+                  document.getElementById('current_tab').innerHTML = "E-posta Onayla";
+		document.getElementById('tab2').classList.add("active");
+		document.getElementById('tab1').classList.remove("active");
+		document.getElementById('tab3').classList.remove("active");
+		document.getElementById('tab2_content').style.visibility = "visible";
+		document.getElementById('tab1_content').style.visibility = "hidden";
+		document.getElementById('tab3_content').style.visibility = "hidden";		
+	  document.getElementById("popup_window").style.height="300px";              
+                </script>
+              <?php
+              }                 
+            ?>
 </body>
 </html>
