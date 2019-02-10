@@ -1145,16 +1145,6 @@
 
 /* Giriş Yapmış Kullanıcı Bloğu BİTİŞ*/
 
-/* Kayıt ol Captcha */
-
-.g-recaptcha
-{
-  position: relative;
-  width: 300px;
-  left: 150px;
-  overflow: hidden;
-}
-
 /* 900px-1600px arası ekranlar için CSS bitişi. */
 }
 
