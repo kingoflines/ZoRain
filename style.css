@@ -5,17 +5,8 @@
 *
 */
 
-.yanliskullanici{
-  color:red;
-}
-.errormessage{
-  color:red;
-}
-.registersuccess{
-  color:green;
-  font-size:17px;
-  margin-top:20px;
-}
+
+
   #zologo
   {
     transition: 0.5s;
@@ -373,42 +364,6 @@
 
 
 @media screen and (min-width: 901px){
-  .finish{    
-    color:black;
-    border:1px solid #ddd;
-    margin:5px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #ccc;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-    width: 62.7%;
-  }
-  .more{
-    color:black;
-    border:1px solid #ddd;
-    margin:5px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #ccc;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-    width: 62.7%;
-  }
-  .moreloading{ 
-    color:black;  
-    border:1px solid #ddd;
-    margin:5px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #ccc;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-    width: 62.7%;
-  }
   .top_menu
   {
     user-select: none;
@@ -752,10 +707,7 @@
     font-family: "Bellota Regular";
     margin-right: 15px;
   }
-  .cikis{
-    text-decoration: none;
-    color:white;
-  }
+
   .menu_item:after
   {
     content: "";
@@ -810,22 +762,17 @@
   .article_image
   {
     position: absolute;
-    background-color: transparent;
-    width: 150px;
-    height: 150px;
     left: -70px;
     top: 50%;
-    border-radius: 90px;
     transform: translateY(-50%);
+    display: inline;
   }
 
   .article_image img
   {
-    
-    border-radius: 90px;
+    height: 170px;
     box-sizing: border-box;
-    width: 150px;
-    height: 150px;
+    width: auto;
   }
 
   .article_header
@@ -837,6 +784,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .article_content
   {
     position: absolute;
@@ -850,53 +798,7 @@
     font-family: "Calibri";
 
   }
-  /*BEĞEN BUTONU*/
-  .action2
-  {
-    position: relative;
-    font-size: 14px;
-    top: 40%;
-    transform: translateY(-50%);
-    display: inline-block;
-  }
-  .action2 img
-  {
-    position: relative;
-    height: 20px;
-    width: auto;
-    bottom: -5px;
-    margin-right: 5px;
-    margin-left: 5px;
-  }
-  .action2 button
-  {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    width: 20px;
-    height: 20px;
-  }
-  .action2 button img
-  {
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translate(-50%,-50%);
-  }
-  .action2 button ~ .action_name
-  {
-    margin-left: 5px;
-  }
-  .action2 button:hover
-  {
-    cursor: pointer;
-  }
-  .action2 img:hover
-  {
-    cursor: pointer;
-  }
 
-  /*BEĞEN BUTONU*/
   .actions
   {
     position: absolute;
@@ -908,6 +810,7 @@
     white-space: nowrap;
     overflow: hidden;
   }
+
   .action
   {
     position: relative;
@@ -916,6 +819,7 @@
     transform: translateY(-50%);
     display: inline-block;
   }
+
   .action img
   {
     position: relative;
@@ -925,6 +829,7 @@
     margin-right: 5px;
     margin-left: 5px;
   }
+
   .action button
   {
     background-color: transparent;
@@ -933,6 +838,7 @@
     width: 20px;
     height: 20px;
   }
+
   .action button img
   {
     position: absolute;
@@ -940,22 +846,27 @@
     top: 50%;
     transform: translate(-50%,-50%);
   }
+
   .action button ~ .action_name
   {
     margin-left: 5px;
   }
+
   .action button:hover
   {
     cursor: pointer;
   }
+
   .action img:hover
   {
     cursor: pointer;
-  }  
+  }
+
   .action button:hover + .action_name
   {
     max-width: 220px;
   }
+
   .action_name
   {
     display: inline-block;
@@ -963,6 +874,7 @@
     max-width: 0;
     transition: 0.5s;
   }
+
   .action img:hover + .action_name
   {
     max-width: 220px;
@@ -983,7 +895,7 @@
     color:whitesmoke;
   }
   .register_form{
-    margin-top:-15px;
+    margin-top:25px;
     text-align: center;
   }
   .contractbox{
@@ -1313,43 +1225,5 @@
 /*1600px üzeri ekranlar için CSS başlangıcı*/
 @media screen and (min-width: 1600px)
 {
-  .g-recaptcha{
-    margin-left:88px;
-  }
-  .finish{    
-    color:black;
-    border:1px solid #ddd;
-    margin:5px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #ccc;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-    width: 73.5%;
-  }
-  .more{
-    color:black;
-    border:1px solid #ddd;
-    margin:5px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #ccc;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-    width: 73.5%;
-  }
-  .moreloading{ 
-    color:black;  
-    border:1px solid #ddd;
-    margin:5px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #ccc;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-    width: 73.5%;
-  }
+
 }
