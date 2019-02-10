@@ -146,75 +146,7 @@
     </div>
 
     <div class="tab_contents">
-<<<<<<< HEAD:index.html
-<<<<<<< HEAD:index.html
-<<<<<<< HEAD:index.php
-    <?php        
-    $kayitsekmesiac=0;  
-     $hatamesaji="";
-     $kayitdurdur=0;
-          if(isset($_POST["registerform"])){
-            
-              
-            if (isset($_POST['g-recaptcha-response'])) {
-              $captcha = $_POST['g-recaptcha-response'];
-          }          
-          if (!$captcha) {
-            $hatamesaji="Lütfen Bot Olmadığınızı Doğrulayın";       
-            $kayitdurdur=1;       
-        } 
-          $kontrol = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LfGP5AUAAAAALckBfxtm6m1wzQjEr6U_qopW58g&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
-          if ($kontrol == false) {
-            $hatamesaji="Spam Kayıt Uyarısı";
-                                  }
-        else{
-          if(isset($_POST["username"]) && isset($_POST["userpass"]) && isset($_POST["usernick"]) && isset($_POST["useremail"]) && $kayitdurdur==0){
-              $adi_soyadi=$_POST["username"];
-              $kullanici_adi=$_POST["usernick"];
-              $kullanici_sifre=$_POST["userpass"];
-              $kullanici_sifre_tekrar=$_POST["userpassagain"];
-              $kullanici_eposta=$_POST["useremail"];
-              if(empty($adi_soyadi) || empty($kullanici_adi) ||empty($kullanici_sifre)|| empty($kullanici_sifre_tekrar) || empty($kullanici_eposta )){
-                $hatamesaji="Lütfen Boş Alan Bırakmayın";
-              }
-              else if($kullanici_sifre!=$kullanici_sifre_tekrar){
-                $hatamesaji="Şifreler Eşleşmiyor";
-              }
-              else { 
-                $kullanicikontrol=$db->query("SELECT * FROM kullanicilar where kullanici_adi='$kullanici_adi'");
-                $kullanicisayisi=$kullanicikontrol->rowCount();
-                if($kullanicisayisi==0){
-                  $kullanici_postaonay="false";             
-                  $kullanici_resimlinki="data/images/doga1.jpg";
-                  $sorgu=$db->prepare("INSERT INTO kullanicilar SET adi_soyadi=?,kullanici_adi=?,kullanici_sifre=?,kullanici_eposta=?,kullanici_postaonay=?,kullanici_resimlinki=?");
-                  $ekle=$sorgu->execute([$adi_soyadi,$kullanici_adi,$kullanici_sifre,$kullanici_eposta,$kullanici_postaonay,$kullanici_resimlinki]);
-                  if($ekle){     
-                    $kayitkontrol="registertrue";   
-                    setcookie("register", "registertrue",time() + (15));    
-                    ?><meta http-equiv="refresh" content="0; url=index.php#focus"><?php
-                  }
-                  else{
-                    $hata=$sorgu->errorInfo();
-                    echo "hata: ".$hata[2];
-                  }
-                }
-                else{
-                  $hatamesaji="Kullanıcı Adı Malesef Alınmış";
-                }
-              }
-            }          
-        }  
-      }
-          ?>
-=======
 
->>>>>>> parent of 40fcd9d... Anasayfa Kayıt Ol- Giriş Yap - Beğeni:index.html
-=======
-
->>>>>>> parent of 40fcd9d... Anasayfa Kayıt Ol- Giriş Yap - Beğeni:index.html
-=======
-
->>>>>>> parent of 40fcd9d... Anasayfa Kayıt Ol- Giriş Yap - Beğeni:index.html
       <div id="tab1_content" style="visibility: hidden; overflow: auto;"> 
         <form action="" method="POST" class="register_form">
           <label for="" class="register_label">Adınız Soyadınız*</label><br>
