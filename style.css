@@ -751,7 +751,6 @@
 
   #article_container
   {
-    z-index: 1;
     position: absolute;
     top: 30px;
     left: 0;
@@ -1144,6 +1143,31 @@
   /* Okunmamış Mesaj Bitiş /*
 
 /* Giriş Yapmış Kullanıcı Bloğu BİTİŞ*/
+
+/* Copyright blok BAŞLANGIÇ */
+
+
+#black_bottom
+{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  margin-top: 150px;
+  background-color: #000;
+  transition: 0.5s;
+}
+
+.bottom_content
+{
+  color: #fff;
+  margin: auto;
+  text-align: center;
+}
+
+/* Copyright blok BİTİŞ */
 
 /* 900px-1600px arası ekranlar için CSS bitişi. */
 }

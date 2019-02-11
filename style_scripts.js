@@ -123,3 +123,20 @@ function slideshow() {
       document.getElementById("slide_picture").src= "http://www.wearemoviegeeks.com/wp-content/uploads/pcs_236pub2.pub16.123.jpg";
     }
   }
+
+  function bringfront()
+  {
+    var trend = document.getElementById("trends_block");
+    var cont = document.getElementById("article_container");
+
+    trend.style.zIndex = "1";
+    cont.style.zIndex = "2";
+  }
+
+  function bringback() {
+    var trend = document.getElementById("trends_block");
+    var cont = document.getElementById("article_container");
+
+    trend.style.zIndex = "2";
+    cont.style.zIndex = "1";
+  }
